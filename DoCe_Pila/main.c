@@ -13,14 +13,14 @@ int main()
         switch(opc){
         case 'A':
             puts("Elegiste JUGAR");
-            ///jugar();
+            jugar();
             break;
         case 'B':
             puts("Elegiste VER RANKING");
             ///verRanking();
             break;
         case 'C':
-            puts("Elegiste SALIR");
+            puts("¡ Gracias por jugar !");
             break;
         }
     }

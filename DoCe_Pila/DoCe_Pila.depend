@@ -7,7 +7,7 @@
 	<string.h>
 	"utilidades.h"
 
-1747151726 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1747157948 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
 1747157450 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
 	"listaSimple.h"
@@ -20,7 +20,7 @@
 1747157679 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1747151156 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1747159829 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
@@ -35,7 +35,7 @@
 1747157450 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1747157593 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1747158965 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
