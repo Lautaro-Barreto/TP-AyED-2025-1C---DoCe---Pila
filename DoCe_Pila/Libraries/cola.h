@@ -3,19 +3,12 @@
 
 #include<stdlib.h>
 #include<string.h>
+#include"utilidades.h"
 
 #define TAM_COLA        30
 #define COLA_LLENA      1
 #define COLA_VACIA      2
-#define TODO_BIEN       3
 #define SIN_MEM         4
-#define MINIMO(x,y) ((x)<(y)?(x):(y))
-
-typedef struct sNodo{
-    void* info;
-    unsigned tam;
-    struct sNodo* sig;
-}tNodo;
 
 typedef struct{
     tNodo* pri;

@@ -2,10 +2,11 @@
 #define PILA_H_INCLUDED
 
 #define TAM_PILA 340
+#define PILA_LLENA 1
+#define PILA_VACIA 2
 
 #include<string.h>
-
-#define MINIMO( x , y ) (( x ) <= ( y ) ? ( x ) : ( y ) )
+#include"utilidades.h"
 
 typedef struct{
     char pila[TAM_PILA];

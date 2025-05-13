@@ -1,33 +1,37 @@
 #include "listaSimple.h"
 
-void crearLista(lista*l)
+/*--------------------------------------------------------
+*                 LISTA SIMPLEMENTE ENLAZADA
+*---------------------------------------------------------*/
+
+void crearLista(tLista*pl)
 {
-    *l=NULL;
+    *pl=NULL;
 }
-void vaciarLista(lista*pl)
+void vaciarLista(tLista*pl)
 {
-    estNodo*elim;
+    tNodo*elim;
 
     while( *pl!=NULL )
     {
         elim=*pl;
-        *pl=elim->sig;
+        *pl= elim->sig;
         free(elim->info);
         free(elim);
     }
 }
-int esListaVacia(const lista*pl)
+int listaVacia(const tLista*pl)
 {
     return *pl==NULL;
 }
-int esListaLlena(const lista*pl)
+int listaLlena(const tLista*pl)
 {
     return 0;
 }
-int inserPrimSinDupli(lista*pl,const void*info,size_t tamInfo,comparar comp)
+int inserPrimSinDupli(tLista*pl,const void*info,size_t tamInfo,comparar comp)
 {
-    estNodo*nue;
-    estNodo**prim=pl;
+    tNodo*nue;
+    tNodo**prim=pl;
     int result=1;
 
     while( *pl!=NULL && (result=comp((*pl)->info,info)) )
@@ -36,7 +40,7 @@ int inserPrimSinDupli(lista*pl,const void*info,size_t tamInfo,comparar comp)
     if(result==0)
         return DUPLICADO;
 
-    nue=malloc(sizeof(estNodo));
+    nue=malloc(sizeof(tNodo));
     if( nue==NULL || (nue->info=malloc(tamInfo))==NULL )
     {
         free(nue);
@@ -48,7 +52,7 @@ int inserPrimSinDupli(lista*pl,const void*info,size_t tamInfo,comparar comp)
     nue->tam=tamInfo;
     return TODO_OK;
 }
-void recorrerIzqDer(const lista*pl,imprimir imp)
+void recorrerIzqDer(const tLista*pl,imprimir imp)
 {
     while(*pl!=NULL)
     {
@@ -56,11 +60,11 @@ void recorrerIzqDer(const lista*pl,imprimir imp)
         pl=&(*pl)->sig;
     }
 }
-void mapear(const lista*pl,accion acc,const void*parametro)
+void mapear(const tLista*pl, accion acc)
 {
     while(*pl!=NULL)
     {
-        acc( (*pl)->info,parametro );
+        acc((*pl)->info);
         pl=&(*pl)->sig;
     }
 }

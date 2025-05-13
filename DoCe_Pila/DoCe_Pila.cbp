@@ -31,6 +31,23 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Libraries/DoCe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/DoCe.h" />
+		<Unit filename="Libraries/cola.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/cola.h" />
+		<Unit filename="Libraries/listaSimple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/listaSimple.h" />
+		<Unit filename="Libraries/pila.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/pila.h" />
+		<Unit filename="Libraries/utilidades.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

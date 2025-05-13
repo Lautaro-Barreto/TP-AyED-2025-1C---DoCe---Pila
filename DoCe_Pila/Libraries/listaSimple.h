@@ -3,31 +3,24 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include"utilidades.h"
 
 #define DUPLICADO 1
-#define TODO_OK 0
 #define SIN_MEMORIA -1
 #define LISTA_VACIA -2
 #define LISTA_LLENA -3
 
-typedef struct nodo
-{
-    void*info;
-    size_t tam;
-    struct nodo*sig;
-}estNodo;
-
-typedef estNodo*lista;
+typedef tNodo*tLista;
 typedef int(*comparar)(const void*,const void*);
+typedef void(*accion)(const void*);
 typedef void(*imprimir)(const void*);
-typedef void(*accion)(void*dato,const void*parametro);
 
-void crearLista(lista*);
-void vaciarLista(lista*);
-int esListaVacia(const lista*);
-int esListaLlena(const lista*);
-int inserPrimSinDupli(lista*pl,const void*info,size_t tamInfo,comparar);
-void recorrerIzqDer(const lista*pl,imprimir);
-void mapear(const lista*pl,accion,const void*parametro);
+void crearLista(tLista*);
+void vaciarLista(tLista*);
+int listaVacia(const tLista*);
+int listaLlena(const tLista*);
+int inserPrimSinDupli(tLista*pl,const void*info,size_t tamInfo,comparar);
+void recorrerIzqDer(const tLista*pl,imprimir);
+void mapear(const tLista* pl, accion acc);
 
 #endif // LISTASIMPLE_H_INCLUDED
