@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<ctype.h>
+#include<time.h>
 
 #include"pila.h"
 #include"cola.h"
@@ -35,18 +36,25 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 typedef struct{
     char nombre[TAM_NOM];
     unsigned mano[CANT_CARTAS];
-    int vencedor;
+    unsigned puntaje;
 }tJugador;
 
 typedef struct{
     unsigned dificultad;
     unsigned mano[CANT_CARTAS];
-}tIa;
+    unsigned puntaje;
+}tIA;
 
 int menu();
 void jugar();
-/// partida(unsigned dificultad,const char* nombre);
-/// turnoJugador(*tJugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
-/// turnoIa(*tIa, tPilaEstatica* mazo, tPilaEstatica* descarte);
+void partida(unsigned dificultad, const char* nombreJugador);
+void mezclarMazo(tPilaEstatica* mazo);
+/// MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
+void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
+void mostrarCartasJugador(tJugador jugador);
+void turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
+/// turnoIa(*tIA, tPilaEstatica* mazo, tPilaEstatica* descarte);
+/// guardarResultado()
+/// verRanking()
 
 #endif // DOCE_H_INCLUDED
