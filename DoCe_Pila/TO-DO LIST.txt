@@ -1,0 +1,20 @@
+*----------------TO-DO-LIST---------------*
+
+partida()
+| 
+|-> mezclarMazo()
+|-> repartirCartas() -> desapilar 1 para cada 1 hasta que ambos tengan 3
+|-> loop 
+     |-> turnoJugador()
+     |		|-> mostrarCartas() 
+     |		|-> usarCarta()
+     |		|-> jugador.puntaje == 12 ? Si sí, gana y sale del loop. Si no, sigue.
+     |		|-> El MAZO está VACÍO ? Si sí, mezclarDescarteYusarDeMazo(). Si no, sigue normal.
+     |		|-> robarDelMazo() -> desapilar de pila 
+     |
+     |-> turnoIA()---> un switch de tres salidas con cada camino segun la dificultad
+          	|->IA.puntaje == 12? Si no, vuelve a empezar el loop. Si sí, gana y sale del loop
+
+verRanking ---> API
+
+guardarResultado ---> API
