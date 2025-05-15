@@ -1,5 +1,7 @@
 #include "DoCe.h"
 
+/** Si quieren que la mano del jugador y de la ia sean listas de 3 cartas, haganlo (?)*/
+
 /*
 *----------------TO-DO-LIST---------------*
 
@@ -82,33 +84,44 @@ void partida(unsigned dificultad, const char* nombreJugador){
     ///Preparativos antes de comenzar el juego
     crearPila(&mazo);
     mezclarMazo(&mazo);
+
+////Se usa para probar mezclar mazo
+//    for(int i=0;i<TAM_MAZO;i++){
+//        int aux;
+//        desapilar(&mazo,&aux,sizeof(unsigned));
+//        printf("%d ",aux);
+//    }
+//    system("pause");
+
+
     repartirCartas(&mazo, &jugador, &ia);
+
 
     ///loop
     while(fin != '1'){
-       turnoJugador(&jugador, &mazo, &descarte);
-       //jugador.puntaje == 12 ? Ganó, salir : Seguir
-       //turnoIA
-       //ia.puntaje == 12 ? Ganó, salir : Seguir
+       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
+            fin = '0';
+       else
+        if(turnoIa(&ia,&mazo,&descarte) == GANO)
+            fin = '0';
     }
+
     //guardarResultado()
 }
 
-///Solucion prematura para que todo lo demas funcione, quizas luego implemente un algoritmo
-///para mezclar tipo el Fisher-Yates (?)
 void mezclarMazo(tPilaEstatica* mazo){
 
-    ///A cada pos del vector le corresponde una ID de carta
-    unsigned cartas[] = {6, 10, 8, 6, 6, 4};
-    unsigned idCarta, cartasApiladas = 0;
+    //IDs de cartas:      cant:
+    //MAS_DOS         0     6
+    //MAS_UNO         1     10
+    //MENOS_UNO       2     8
+    //MENOS_DOS       3     6
+    //REPETIR_TURNO   4     6
+    //ESPEJO          5     4
 
-    //IDs de cartas:
-    //MAS_DOS         0
-    //MAS_UNO         1
-    //MENOS_UNO       2
-    //MENOS_DOS       3
-    //REPETIR_TURNO   4
-    //ESPEJO          5
+    //A cada pos del vector le corresponde una ID de carta
+    unsigned cartas[] = {CANT_MAS_DOS,CANT_MAS_UNO,CANT_MENOS_UNO,CANT_MENOS_DOS,CANT_REPETIR_TURNO,CANT_ESPEJO};
+    unsigned cartasApiladas = 0, idCarta;
 
     srand(time(0));
 
@@ -122,6 +135,29 @@ void mezclarMazo(tPilaEstatica* mazo){
         cartas[idCarta]--;
         cartasApiladas++;
     }
+}
+
+void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo){
+
+    unsigned descartadas[TAM_MAZO], i=0, cant=0, j, aux;
+
+    srand(time(0));
+
+    while( pilaVacia(descarte) != PILA_VACIA ){
+        desapilar(descarte,&descartadas[i],sizeof(unsigned));
+        i++;
+        cant++;
+    }
+
+    for(i=cant;i>0;i--){
+        j = rand() % i;
+        aux = descartadas[j];
+        descartadas[i] = descartadas[j];
+        descartadas[j] = aux;
+    }
+
+    for(i=0;i<cant;i++)
+        apilar(mazo,&descartadas[i],sizeof(unsigned));
 }
 
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia){
@@ -160,8 +196,18 @@ void mostrarCartasJugador(tJugador jugador){
     printf("Puntaje: %d",jugador.puntaje);
 }
 
-void turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
+///Completar - Nico
+int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
     mostrarCartasJugador(*jugador);
+
     fflush(stdin);
-    getchar();
+    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
+
+    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
 }
+
+///Completar - Matías
+int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
+}
+
+///completar - Federico: guardarResultado() y verRanking() (la parte de conexión con la API)

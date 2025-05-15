@@ -10,18 +10,28 @@
 #include"cola.h"
 #include"listaSimple.h"
 
+#define GANO     6
+#define SIGUE    7
+
 ///Cantidades que nos importan
-#define CANT_CARTAS     3
+#define TAM_MANO         3
 #define TAM_MAZO        40
 #define TAM_NOM         26
 
-///ID de cada carta
+///ID y cantidad de cada carta
 #define MAS_DOS         0
 #define MAS_UNO         1
 #define MENOS_UNO       2
 #define MENOS_DOS       3
 #define REPETIR_TURNO   4
 #define ESPEJO          5
+
+#define CANT_MAS_DOS         6
+#define CANT_MAS_UNO         10
+#define CANT_MENOS_UNO       8
+#define CANT_MENOS_DOS       6
+#define CANT_REPETIR_TURNO   6
+#define CANT_ESPEJO          4
 
 /*idea:
 Que a cada tipo de carta le corresponda un numero (0 1 2 3 4 5)
@@ -35,13 +45,13 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 
 typedef struct{
     char nombre[TAM_NOM];
-    unsigned mano[CANT_CARTAS];
+    unsigned mano[TAM_MANO];
     unsigned puntaje;
 }tJugador;
 
 typedef struct{
     unsigned dificultad;
-    unsigned mano[CANT_CARTAS];
+    unsigned mano[TAM_MANO];
     unsigned puntaje;
 }tIA;
 
@@ -49,11 +59,11 @@ int menu();
 void jugar();
 void partida(unsigned dificultad, const char* nombreJugador);
 void mezclarMazo(tPilaEstatica* mazo);
-/// MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
+void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
 void mostrarCartasJugador(tJugador jugador);
-void turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
-/// turnoIa(*tIA, tPilaEstatica* mazo, tPilaEstatica* descarte);
+int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
+int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte);
 /// guardarResultado()
 /// verRanking()
 
