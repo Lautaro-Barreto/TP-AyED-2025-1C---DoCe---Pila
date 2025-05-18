@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Libraries/DoCe.h" />
+		<Unit filename="Libraries/carta.h" />
 		<Unit filename="Libraries/cola.c">
 			<Option compilerVar="CC" />
 		</Unit>
