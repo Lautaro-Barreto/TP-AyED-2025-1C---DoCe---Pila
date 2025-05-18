@@ -38,6 +38,6 @@ typedef struct
     eCant cantidad;
 }tCartaConfig;
 
-
+void mostrarCarta(const void*p);
 const tCartaConfig*obtenerConfig();
 #endif // CARTA_H_INCLUDED

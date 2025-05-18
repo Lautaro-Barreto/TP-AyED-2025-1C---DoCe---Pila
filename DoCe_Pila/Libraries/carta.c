@@ -12,3 +12,9 @@ const tCartaConfig*obtenerConfig()
 {
     return valoresBase;
 }
+void mostrarCarta(const void*p)
+{
+    tCarta*carta=(tCarta*)p;
+    if(carta)
+        printf("%s",carta->descrip);
+}
