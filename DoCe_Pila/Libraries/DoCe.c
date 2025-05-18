@@ -50,23 +50,49 @@ int menu(){
 }
 
 void jugar(){
+    unsigned dificultad;//¿Acá podríamos poner directamente al tJugador?
+    char nombreJugador[TAM_NOM];
 
-    unsigned dificultad;
-    char nombreJugador[26];
+    ingresarNombre(nombreJugador,TAM_NOM);
+    dificultad=ingresarDificultad();
+    partida(dificultad, nombreJugador);
+}
 
-    printf("\nIngrese el nombre del jugador: ");
-    scanf("%s",nombreJugador);
-    puts("\nSeleccione el nivel de dificultad contra la maquina: \n\n"
+void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
+{
+    int pasada=0;
+    char*entrada;
+    do
+    {
+        if(pasada)
+            printf("\nEl nombre ingresado no es valido");
+        pasada=printf("\nIngrese el nombre del jugador (Maximo %d caracteres): ",tamEntrada); //el valor de pasada dejara de ser cero y sabre que entro por lo menos una vez
+        fgets(bufferEntra,tamEntrada,stdin);
+        entrada=strchr(bufferEntra,'\n');
+        if(entrada)
+            *entrada='\0';
+        else
+            while( getchar()!='\n');
+    }while(!strlen(bufferEntra));
+}
+int ingresarDificultad ()
+{
+    int dificultad=0,descartados;
+
+    puts("\nSeleccione el nivel de dificultad: \n\n"
          "1) Facil\n"
          "2) Medio\n"
          "3) Dificil\n"
          );
-
-    do{
-    scanf("%d",&dificultad);
-    }while(dificultad<1 || dificultad>3);
-
-    partida(dificultad, nombreJugador);
+    do
+    {
+        scanf("%d",&dificultad);
+        while((descartados=getchar())!='\n');
+        if(dificultad<1 || dificultad>3)
+            puts("Valor invalido, ingrese 1,2 o 3");
+    }
+    while(dificultad<1 || dificultad>3);
+    return dificultad;
 }
 
 void partida(unsigned dificultad, const char* nombreJugador){

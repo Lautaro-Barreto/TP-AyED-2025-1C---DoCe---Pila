@@ -57,6 +57,8 @@ typedef struct{
 
 int menu();
 void jugar();
+void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
+int ingresarDificultad ();
 void partida(unsigned dificultad, const char* nombreJugador);
 void mezclarMazo(tPilaEstatica* mazo);
 void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
