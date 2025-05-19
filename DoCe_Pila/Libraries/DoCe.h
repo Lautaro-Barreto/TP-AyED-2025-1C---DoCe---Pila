@@ -7,9 +7,10 @@
 #include<time.h>
 
 #include"pila.h"
-#include"cola.h"
+//#include"cola.h"
 #include"listaSimple.h"
 #include"carta.h"
+#include"mazo.h"
 
 #define GANO     6
 #define SIGUE    7
@@ -46,7 +47,7 @@ void jugar();
 void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
 int ingresarDificultad ();
 void partida(unsigned dificultad, const char* nombreJugador);
-void mezclarMazo(tPilaEstatica* mazo);
+//void mezclarMazo(tPilaEstatica* mazo);
 void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
 void mostrarCartasJugador(tJugador jugador);

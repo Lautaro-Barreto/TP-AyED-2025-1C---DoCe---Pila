@@ -97,19 +97,19 @@ int ingresarDificultad ()
 
 void partida(unsigned dificultad, const char* nombreJugador){
 
-    char fin = '0';
-    tJugador jugador;
-    tIA ia;
-    tPilaEstatica mazo;
-    tPilaEstatica descarte;
-
-    ia.dificultad = dificultad;
-    strcpy(jugador.nombre,nombreJugador);
-    jugador.puntaje = 0;
-
-    ///Preparativos antes de comenzar el juego
-    crearPila(&mazo);
-    mezclarMazo(&mazo);
+//    char fin = '0';
+//    tJugador jugador;
+//    tIA ia;
+//    tPilaEstatica mazo;
+//    tPilaEstatica descarte;
+//
+//    ia.dificultad = dificultad;
+//    strcpy(jugador.nombre,nombreJugador);
+//    jugador.puntaje = 0;
+//
+//    ///Preparativos antes de comenzar el juego
+//    crearPila(&mazo);
+//    mezclarMazo(&mazo);
 
 ////Se usa para probar mezclar mazo
 //    for(int i=0;i<TAM_MAZO;i++){
@@ -120,17 +120,17 @@ void partida(unsigned dificultad, const char* nombreJugador){
 //    system("pause");
 
 
-    repartirCartas(&mazo, &jugador, &ia);
+//    repartirCartas(&mazo, &jugador, &ia);
 
 
     ///loop
-    while(fin != '1'){
-       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
-            fin = '0';
-       else
-        if(turnoIa(&ia,&mazo,&descarte) == GANO)
-            fin = '0';
-    }
+//    while(fin != '1'){
+//       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
+//            fin = '0';
+//       else
+//        if(turnoIa(&ia,&mazo,&descarte) == GANO)
+//            fin = '0';
+//    }
 
     //guardarResultado()
 }
@@ -223,17 +223,17 @@ void mostrarCartasJugador(tJugador jugador){
 }
 
 ///Completar - Nico
-int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
-    mostrarCartasJugador(*jugador);
-
-    fflush(stdin);
-    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
-
-    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
-}
-
+//int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
+//    mostrarCartasJugador(*jugador);
+//
+//    fflush(stdin);
+//    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
+//
+//    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
+//}
+//
 ///Completar - Matías
-int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
-}
-
+//int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
+//}
+//
 ///completar - Federico: guardarResultado() y verRanking() (la parte de conexión con la API)

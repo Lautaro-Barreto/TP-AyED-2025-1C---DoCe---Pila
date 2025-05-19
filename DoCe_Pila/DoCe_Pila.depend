@@ -49,20 +49,20 @@
 	<string.h>
 	"utilidades.h"
 
-1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1747621550 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1747592483 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1747621001 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1747593755 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1747621392 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
 	<time.h>
 	"pila.h"
-	"cola.h"
 	"listaSimple.h"
 	"carta.h"
+	"mazo.h"
 
 1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
 	<string.h>
@@ -79,15 +79,22 @@
 1747592466 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1747614809 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1747623300 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
 
-1747614913 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
+1747615332 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
 	"carta.h"
 
-1747614626 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
+1747616683 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
 	<stdlib.h>
 	<stdio.h>
+
+1747623283 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
+	"carta.h"
+	<string.h>
+
+1747623350 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
+	"mazo.h"
 
