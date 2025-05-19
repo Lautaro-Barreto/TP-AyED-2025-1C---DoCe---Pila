@@ -135,34 +135,6 @@ void partida(unsigned dificultad, const char* nombreJugador){
     //guardarResultado()
 }
 
-void mezclarMazo(tPilaEstatica* mazo){
-
-    //IDs de cartas:      cant:
-    //MAS_DOS         0     6
-    //MAS_UNO         1     10
-    //MENOS_UNO       2     8
-    //MENOS_DOS       3     6
-    //REPETIR_TURNO   4     6
-    //ESPEJO          5     4
-
-    //A cada pos del vector le corresponde una ID de carta
-    unsigned cartas[] = {CANT_MAS_DOS,CANT_MAS_UNO,CANT_MENOS_UNO,CANT_MENOS_DOS,CANT_REPETIR_TURNO,CANT_ESPEJO};
-    unsigned cartasApiladas = 0, idCarta;
-
-    srand(time(0));
-
-    while(cartasApiladas < 40){
-
-        do{
-            idCarta = rand() % 6;
-        }while(cartas[idCarta] == 0);
-
-        apilar(mazo,&idCarta,sizeof(unsigned));
-        cartas[idCarta]--;
-        cartasApiladas++;
-    }
-}
-
 void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo){
 
     unsigned descartadas[TAM_MAZO], i=0, cant=0, j, aux;

@@ -24,6 +24,18 @@ int inicializarMazo(tMazo*p)
     }
     return OK;
 }
+void mezclarMazo(tMazo*p)
+{
+    int indAlea,indice,tam=sizeof(tCarta);
+
+    srand(time(NULL));
+    for(indice=MAX_CARTAS-1; indice>0; indice--)
+    {
+        indAlea=rand()%MAX_CARTAS;
+        if(indice!=indAlea)
+            intercambiar(&p->mazo[indice],&p->mazo[indAlea],tam);
+    }
+}
 void recorrerMazo(tMazo*p)//función de prueba y bien fea.
 {
     for(p->tope=0;p->tope<MAX_CARTAS;p->tope++)
@@ -31,4 +43,12 @@ void recorrerMazo(tMazo*p)//función de prueba y bien fea.
         mostrarCarta(&(p->mazo[p->tope]));
         putchar('\n');
     }
+}
+void intercambiar(void*a,void*b,size_t tam)
+{
+    char temp[tam];
+
+    memcpy(temp,a,tam);
+    memcpy(a,b,tam);
+    memcpy(b,temp,tam);
 }

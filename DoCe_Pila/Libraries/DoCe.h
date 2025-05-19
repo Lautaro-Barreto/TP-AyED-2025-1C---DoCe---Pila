@@ -4,7 +4,6 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<ctype.h>
-#include<time.h>
 
 #include"pila.h"
 //#include"cola.h"
@@ -47,8 +46,6 @@ void jugar();
 void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
 int ingresarDificultad ();
 void partida(unsigned dificultad, const char* nombreJugador);
-//void mezclarMazo(tPilaEstatica* mazo);
-void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo);
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
 void mostrarCartasJugador(tJugador jugador);
 int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
