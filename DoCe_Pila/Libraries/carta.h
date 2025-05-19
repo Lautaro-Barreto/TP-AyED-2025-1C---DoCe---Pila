@@ -4,6 +4,8 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+#define MAX_CARTAS 40
+
 typedef enum
 {
     MAS_DOS,
