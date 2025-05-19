@@ -2,6 +2,8 @@
 #define CARTA_H_INCLUDED
 
 #include<stdlib.h>
+#include<stdio.h>
+
 typedef enum
 {
     MAS_DOS,
@@ -11,7 +13,6 @@ typedef enum
     REPETIR_TURNO,
     ESPEJO
 }eEfecto;//La 'e' es por enum para diferenciarlo de las estrcuturas
-
 typedef enum
 {
     CANT_MAS_DOS=6,
@@ -22,14 +23,12 @@ typedef enum
     CANT_ESPEJO=4,
     TAM_DESCRIP=15 //Este valor no se si dejarlo aca (por nomemclatura)
 } eCant;
-
 typedef struct
 {
     eEfecto codigo; //Una ID para saber que hace la carta
     char descrip[TAM_DESCRIP]; //Para una posible función mostrarCarta(tCarta*)
     int valor; //Cero cuando la carta no afecte el puntaje
 }tCarta;
-
 typedef struct
 {
     eEfecto codigo;
@@ -40,4 +39,6 @@ typedef struct
 
 void mostrarCarta(const void*p);
 const tCartaConfig*obtenerConfig();
+int obtenerCantTipos();
+int obtenerCartasTotales();
 #endif // CARTA_H_INCLUDED

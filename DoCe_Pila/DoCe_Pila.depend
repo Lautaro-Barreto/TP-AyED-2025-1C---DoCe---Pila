@@ -41,20 +41,20 @@
 	<stdlib.h>
 	"Libraries/DoCe.h"
 
-1747176265 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c
+1747592466 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c
 	"cola.h"
 
-1747176265 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.h
+1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.h
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1747176265 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1747529247 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1747592483 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1747529247 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1747593755 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
@@ -62,24 +62,32 @@
 	"pila.h"
 	"cola.h"
 	"listaSimple.h"
+	"carta.h"
 
-1747176265 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
+1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
 	<string.h>
 	"utilidades.h"
 
-1747176265 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
+1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1747176265 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
+1747592466 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
 	"listaSimple.h"
 
-1747176265 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
+1747592466 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1747176265 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1747614809 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
+
+1747614913 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
+	"carta.h"
+
+1747614626 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
+	<stdlib.h>
+	<stdio.h>
 
