@@ -10,14 +10,16 @@
 
 typedef struct
 {
-    tCarta mazo[MAX_CARTAS];
+    eEfecto mazo[MAX_CARTAS];
     int tope;
 }tMazo;
 
-typedef void(fMost)(const void*);
 void crearMazo(tMazo*p);
-int inicializarMazo(tMazo*p);
+int llenarMazo(tMazo*p);
 void mezclarMazo(tMazo*p);
-void recorrerMazo(tMazo*);//función de prueba y bien fea.
 void intercambiar(void*a,void*b,size_t tam);//esta función me parece que tiene que ir a para en utilidades.h
+
+//funciones para pruebas y verificaciones, bien feas
+typedef void(fMost)(const void*);
+void recorrerMazo(tMazo*);
 #endif // MAZO_H_INCLUDED

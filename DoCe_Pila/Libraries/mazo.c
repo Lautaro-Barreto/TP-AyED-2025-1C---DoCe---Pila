@@ -4,32 +4,30 @@ void crearMazo(tMazo*p)
 {
     p->tope=0;
 }
-int inicializarMazo(tMazo*p)
+int llenarMazo(tMazo*p)
 {
     const tCartaConfig*config=obtenerConfig();
-    int indConfig,indMazo,cantInsert,cantTipos,cant;
+    int indConf,tope,apiladas,plantillas,copias;
 
     if(MAX_CARTAS!=obtenerCartasTotales())
         return CANT_CARTAS_INVALIDA;
-    cantTipos=obtenerCantTipos();
-    for(indConfig=indMazo=0; indConfig<cantTipos; indConfig++)
+    plantillas=obtenerCantTipos();
+    for(indConf=tope=0; indConf<plantillas; indConf++)
     {
-        cant=(config+indConfig)->cantidad;
-        for(cantInsert=0; cantInsert<cant; cantInsert++,indMazo++)
+        copias=(config+indConf)->cantidad;
+        for(apiladas=0; apiladas<copias; apiladas++,tope++)
         {
-            p->mazo[indMazo].valor=(config+indConfig)->valor;//estás tres líneas las podríamos convertir
-            p->mazo[indMazo].codigo=(config+indConfig)->codigo;//en una función (insertarEnPosición)
-            strcpy(p->mazo[indMazo].descrip,(config+indConfig)->descrip);//para que la función sea más generica
+            p->mazo[tope]=(config+indConf)->codigo;
         }
     }
     return OK;
 }
 void mezclarMazo(tMazo*p)
 {
-    int indAlea,indice,tam=sizeof(tCarta);
+    int indAlea,indice,tam=sizeof(p->mazo[0]);
 
     srand(time(NULL));
-    for(indice=MAX_CARTAS-1; indice>0; indice--)
+    for(indice=MAX_CARTAS-1; indice>=0; indice--)
     {
         indAlea=rand()%MAX_CARTAS;
         if(indice!=indAlea)
@@ -40,8 +38,7 @@ void recorrerMazo(tMazo*p)//función de prueba y bien fea.
 {
     for(p->tope=0;p->tope<MAX_CARTAS;p->tope++)
     {
-        mostrarCarta(&(p->mazo[p->tope]));
-        putchar('\n');
+        printf("%d\n",p->mazo[p->tope]);
     }
 }
 void intercambiar(void*a,void*b,size_t tam)
