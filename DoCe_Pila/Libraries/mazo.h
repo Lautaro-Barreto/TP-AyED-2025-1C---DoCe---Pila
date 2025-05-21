@@ -7,6 +7,7 @@
 
 #define OK 0//Me planteo crear un .h solo para los códigos que están repetidos...
 #define CANT_CARTAS_INVALIDA -1
+#define MAZO_VACIO -2
 
 typedef struct
 {
@@ -18,7 +19,7 @@ void crearMazo(tMazo*p);
 int llenarMazo(tMazo*p);
 void mezclarMazo(tMazo*p);
 void intercambiar(void*a,void*b,size_t tam);//esta función me parece que tiene que ir a para en utilidades.h
-
+int robarCarta(tMazo*p,void*dest,unsigned tam);
 //funciones para pruebas y verificaciones, bien feas
 typedef void(fMost)(const void*);
 void recorrerMazo(tMazo*);

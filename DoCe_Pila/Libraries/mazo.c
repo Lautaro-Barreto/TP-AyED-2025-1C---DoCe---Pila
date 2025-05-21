@@ -27,18 +27,11 @@ void mezclarMazo(tMazo*p)
     int indAlea,indice,tam=sizeof(p->mazo[0]);
 
     srand(time(NULL));
-    for(indice=MAX_CARTAS-1; indice>=0; indice--)
+    for(indice=p->tope; indice>=0; indice--)
     {
         indAlea=rand()%MAX_CARTAS;
         if(indice!=indAlea)
             intercambiar(&p->mazo[indice],&p->mazo[indAlea],tam);
-    }
-}
-void recorrerMazo(tMazo*p)//función de prueba y bien fea.
-{
-    for(p->tope=0;p->tope<MAX_CARTAS;p->tope++)
-    {
-        printf("%d\n",p->mazo[p->tope]);
     }
 }
 void intercambiar(void*a,void*b,size_t tam)
@@ -48,4 +41,19 @@ void intercambiar(void*a,void*b,size_t tam)
     memcpy(temp,a,tam);
     memcpy(a,b,tam);
     memcpy(b,temp,tam);
+}
+int robarCarta(tMazo*p,void*dest,unsigned tam)
+{
+    if(p->tope<0)
+        return MAZO_VACIO;
+    memcpy(dest,&p->mazo[p->tope],tam);
+    p->tope--;
+    return OK;
+}
+void recorrerMazo(tMazo*p)//función de prueba y bien fea.
+{
+    for(p->tope=0;p->tope<MAX_CARTAS;p->tope++)
+    {
+        printf("%d\n",p->mazo[p->tope]);
+    }
 }

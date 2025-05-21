@@ -2,54 +2,76 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="Libraries\carta.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="280" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="15" />
+			<Collapse line="21" />
+			<Collapse line="25" />
+		</Folding>
+	</File>
+	<File name="Libraries\pila.h" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="162" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="407" topLine="0" />
+			<Cursor1 position="86" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Libraries\listaSimple.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\mazo.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="177" topLine="0" />
+			<Cursor1 position="397" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Libraries\cola.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\pila.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="70" topLine="0" />
+			<Cursor1 position="563" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="6" />
+			<Collapse line="22" />
+			<Collapse line="26" />
+			<Collapse line="39" />
+			<Collapse line="43" />
+			<Collapse line="47" />
+		</Folding>
+	</File>
+	<File name="Libraries\carta.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="115" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Libraries\DoCe.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1565" topLine="0" />
+			<Cursor1 position="4215" topLine="62" />
 		</Cursor>
 		<Folding>
 			<Collapse line="61" />
 			<Collapse line="78" />
 			<Collapse line="97" />
+			<Collapse line="137" />
 		</Folding>
 	</File>
-	<File name="Libraries\pila.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\mazo.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="466" topLine="0" />
+			<Cursor1 position="81" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="Libraries\cola.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="107" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Libraries\listaSimple.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="86" topLine="0" />
-		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="25" />
+			<Collapse line="37" />
+			<Collapse line="44" />
+		</Folding>
 	</File>
 	<File name="Libraries\DoCe.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1702" topLine="35" />
-		</Cursor>
-	</File>
-	<File name="Libraries\pila.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="69" topLine="0" />
+			<Cursor1 position="110" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

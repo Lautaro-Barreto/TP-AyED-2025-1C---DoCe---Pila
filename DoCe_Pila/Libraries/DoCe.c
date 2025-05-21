@@ -135,29 +135,6 @@ void partida(unsigned dificultad, const char* nombreJugador){
     //guardarResultado()
 }
 
-void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo){
-
-    unsigned descartadas[TAM_MAZO], i=0, cant=0, j, aux;
-
-    srand(time(0));
-
-    while( pilaVacia(descarte) != PILA_VACIA ){
-        desapilar(descarte,&descartadas[i],sizeof(unsigned));
-        i++;
-        cant++;
-    }
-
-    for(i=cant;i>0;i--){
-        j = rand() % i;
-        aux = descartadas[j];
-        descartadas[i] = descartadas[j];
-        descartadas[j] = aux;
-    }
-
-    for(i=0;i<cant;i++)
-        apilar(mazo,&descartadas[i],sizeof(unsigned));
-}
-
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia){
     unsigned i;
     for(i = 0 ; i < 3 ; i++){
