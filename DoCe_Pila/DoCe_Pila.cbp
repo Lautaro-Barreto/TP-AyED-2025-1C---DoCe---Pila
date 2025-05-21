@@ -35,14 +35,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Libraries/DoCe.h" />
-		<Unit filename="Libraries/cola.c">
+		<Unit filename="Libraries/carta.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Libraries/cola.h" />
-		<Unit filename="Libraries/listaSimple.c">
+		<Unit filename="Libraries/carta.h" />
+		<Unit filename="Libraries/mazo.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Libraries/listaSimple.h" />
+		<Unit filename="Libraries/mazo.h" />
 		<Unit filename="Libraries/pila.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -50,40 +50,66 @@ int menu(){
 }
 
 void jugar(){
+    unsigned dificultad;//¿Acá podríamos poner directamente al tJugador?
+    char nombreJugador[TAM_NOM];
 
-    unsigned dificultad;
-    char nombreJugador[26];
+    ingresarNombre(nombreJugador,TAM_NOM);
+    dificultad=ingresarDificultad();
+    partida(dificultad, nombreJugador);
+}
 
-    printf("\nIngrese el nombre del jugador: ");
-    scanf("%s",nombreJugador);
-    puts("\nSeleccione el nivel de dificultad contra la maquina: \n\n"
+void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
+{
+    int pasada=0;
+    char*entrada;
+    do
+    {
+        if(pasada)
+            printf("\nEl nombre ingresado no es valido");
+        pasada=printf("\nIngrese el nombre del jugador (Maximo %d caracteres): ",tamEntrada); //el valor de pasada dejara de ser cero y sabre que entro por lo menos una vez
+        fgets(bufferEntra,tamEntrada,stdin);
+        entrada=strchr(bufferEntra,'\n');
+        if(entrada)
+            *entrada='\0';
+        else
+            while( getchar()!='\n');
+    }while(!strlen(bufferEntra));
+}
+int ingresarDificultad ()
+{
+    int dificultad=0,descartados;
+
+    puts("\nSeleccione el nivel de dificultad: \n\n"
          "1) Facil\n"
          "2) Medio\n"
          "3) Dificil\n"
          );
-
-    do{
-    scanf("%d",&dificultad);
-    }while(dificultad<1 || dificultad>3);
-
-    partida(dificultad, nombreJugador);
+    do
+    {
+        scanf("%d",&dificultad);
+        while((descartados=getchar())!='\n');
+        if(dificultad<1 || dificultad>3)
+            puts("Valor invalido, ingrese 1,2 o 3");
+    }
+    while(dificultad<1 || dificultad>3);
+    return dificultad;
 }
 
 void partida(unsigned dificultad, const char* nombreJugador){
 
-    char fin = '0';
-    tJugador jugador;
-    tIA ia;
-    tPilaEstatica mazo;
-    tPilaEstatica descarte;
-
-    ia.dificultad = dificultad;
-    strcpy(jugador.nombre,nombreJugador);
-    jugador.puntaje = 0;
-
-    ///Preparativos antes de comenzar el juego
-    crearPila(&mazo);
-    mezclarMazo(&mazo);
+//    char fin = '0';
+//    tJugador jugador;
+//    tIA ia;
+//    tPilaEstatica mazo;
+//    tPilaEstatica descarte;
+//
+//    ia.dificultad = dificultad;
+//    strcpy(jugador.nombre,nombreJugador);
+//    jugador.puntaje = 0;
+//
+//    ///Preparativos antes de comenzar el juego
+//    crearPila(&mazo);
+//    mezclarMazo(&mazo);
 
 ////Se usa para probar mezclar mazo
 //    for(int i=0;i<TAM_MAZO;i++){
@@ -94,70 +120,19 @@ void partida(unsigned dificultad, const char* nombreJugador){
 //    system("pause");
 
 
-    repartirCartas(&mazo, &jugador, &ia);
+//    repartirCartas(&mazo, &jugador, &ia);
 
 
     ///loop
-    while(fin != '1'){
-       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
-            fin = '0';
-       else
-        if(turnoIa(&ia,&mazo,&descarte) == GANO)
-            fin = '0';
-    }
+//    while(fin != '1'){
+//       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
+//            fin = '0';
+//       else
+//        if(turnoIa(&ia,&mazo,&descarte) == GANO)
+//            fin = '0';
+//    }
 
     //guardarResultado()
-}
-
-void mezclarMazo(tPilaEstatica* mazo){
-
-    //IDs de cartas:      cant:
-    //MAS_DOS         0     6
-    //MAS_UNO         1     10
-    //MENOS_UNO       2     8
-    //MENOS_DOS       3     6
-    //REPETIR_TURNO   4     6
-    //ESPEJO          5     4
-
-    //A cada pos del vector le corresponde una ID de carta
-    unsigned cartas[] = {CANT_MAS_DOS,CANT_MAS_UNO,CANT_MENOS_UNO,CANT_MENOS_DOS,CANT_REPETIR_TURNO,CANT_ESPEJO};
-    unsigned cartasApiladas = 0, idCarta;
-
-    srand(time(0));
-
-    while(cartasApiladas < 40){
-
-        do{
-            idCarta = rand() % 6;
-        }while(cartas[idCarta] == 0);
-
-        apilar(mazo,&idCarta,sizeof(unsigned));
-        cartas[idCarta]--;
-        cartasApiladas++;
-    }
-}
-
-void MezclarDescarte(tPilaEstatica* descarte, tPilaEstatica* mazo){
-
-    unsigned descartadas[TAM_MAZO], i=0, cant=0, j, aux;
-
-    srand(time(0));
-
-    while( pilaVacia(descarte) != PILA_VACIA ){
-        desapilar(descarte,&descartadas[i],sizeof(unsigned));
-        i++;
-        cant++;
-    }
-
-    for(i=cant;i>0;i--){
-        j = rand() % i;
-        aux = descartadas[j];
-        descartadas[i] = descartadas[j];
-        descartadas[j] = aux;
-    }
-
-    for(i=0;i<cant;i++)
-        apilar(mazo,&descartadas[i],sizeof(unsigned));
 }
 
 void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia){
@@ -197,17 +172,17 @@ void mostrarCartasJugador(tJugador jugador){
 }
 
 ///Completar - Nico
-int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
-    mostrarCartasJugador(*jugador);
-
-    fflush(stdin);
-    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
-
-    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
-}
-
+//int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
+//    mostrarCartasJugador(*jugador);
+//
+//    fflush(stdin);
+//    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
+//
+//    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
+//}
+//
 ///Completar - Matías
-int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
-}
-
+//int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
+//}
+//
 ///completar - Federico: guardarResultado() y verRanking() (la parte de conexión con la API)
