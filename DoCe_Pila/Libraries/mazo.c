@@ -27,7 +27,7 @@ void mezclarMazo(tMazo*p)
     int indAlea,indice,tam=sizeof(p->mazo[0]);
 
     srand(time(NULL));
-    for(indice=p->tope; indice>=0; indice--)
+    for(indice=p->tope-1; indice>=0; indice--)
     {
         indAlea=rand()%MAX_CARTAS;
         if(indice!=indAlea)
