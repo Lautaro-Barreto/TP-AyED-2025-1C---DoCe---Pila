@@ -20,7 +20,7 @@ int main()
             ///verRanking();
             break;
         case 'C':
-            puts("¡ Gracias por jugar !");
+            puts("Gracias por jugar !!!");
             break;
         }
     }

@@ -2,25 +2,29 @@
 #define MAZO_H_INCLUDED
 
 #include"carta.h"
+#include"utilidades.h"
 #include<string.h>
 #include<time.h>
 
-#define OK 0//Me planteo crear un .h solo para los códigos que están repetidos...
 #define CANT_CARTAS_INVALIDA -1
-#define MAZO_VACIO -2
+#define MAZO_VACIO           -2
+#define MAZO_LLENO           -3
+#define TAM_MAZO              40
 
 typedef struct
 {
-    eEfecto mazo[MAX_CARTAS];
+    tCarta mazo[MAX_CARTAS];
     int tope;
 }tMazo;
 
-void crearMazo(tMazo*p);
-int llenarMazo(tMazo*p);
-void mezclarMazo(tMazo*p);
-void intercambiar(void*a,void*b,size_t tam);//esta función me parece que tiene que ir a para en utilidades.h
+void crearMazo(tMazo*mazo);
+int ponerEnMazo(tMazo* mazo,const tCarta* carta,unsigned tam);
 int robarCarta(tMazo*p,void*dest,unsigned tam);
+int llenarMazo(tMazo*mazo);
+void mezclarMazo(tMazo*mazo);
+
 //funciones para pruebas y verificaciones, bien feas
 typedef void(fMost)(const void*);
-void recorrerMazo(tMazo*);
+void mostrarMazo(tMazo*);
+
 #endif // MAZO_H_INCLUDED

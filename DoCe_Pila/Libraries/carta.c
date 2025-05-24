@@ -8,20 +8,24 @@ static const tCartaConfig cartasBase[]={//¿esto podría hacerse de otra forma?
     {REPETIR_TURNO,"Repetir turno",0,CANT_REPETIR_TURNO},
     {ESPEJO,"Espejo",0,CANT_ESPEJO}
 };
+
 const tCartaConfig*obtenerConfig()
 {
     return cartasBase;
 }
+
 void mostrarCarta(const void*p)
 {
     tCarta*carta=(tCarta*)p;
     if(carta)
         printf("%s",carta->descrip);
 }
+
 int obtenerCantTipos()
 {
     return sizeof(cartasBase)/sizeof(tCartaConfig);
 }
+
 int obtenerCartasTotales()
 {
     int total,cantTipo=sizeof(cartasBase)/sizeof(tCartaConfig),indice;

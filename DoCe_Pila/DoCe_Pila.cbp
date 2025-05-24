@@ -47,6 +47,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Libraries/pila.h" />
+		<Unit filename="Libraries/utilidades.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Libraries/utilidades.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />

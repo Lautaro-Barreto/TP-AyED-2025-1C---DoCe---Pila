@@ -51,11 +51,12 @@ int menu(){
 }
 
 void jugar(){
+
     unsigned dificultad;//¿Acá podríamos poner directamente al tJugador?
     char nombreJugador[TAM_NOM];
 
     ingresarNombre(nombreJugador,TAM_NOM);
-    dificultad=ingresarDificultad();
+    dificultad = ingresarDificultad();
     partida(dificultad, nombreJugador);
 }
 
@@ -76,6 +77,7 @@ void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
             while( getchar()!='\n');
     }while(!strlen(bufferEntra));
 }
+
 int ingresarDificultad ()
 {
     int dificultad=0,descartados;
@@ -90,7 +92,7 @@ int ingresarDificultad ()
         scanf("%d",&dificultad);
         while((descartados=getchar())!='\n');
         if(dificultad<1 || dificultad>3)
-            puts("Valor invalido, ingrese 1,2 o 3");
+            puts("Valor invalido, ingrese 1, 2 o 3");
     }
     while(dificultad<1 || dificultad>3);
     return dificultad;
@@ -98,57 +100,64 @@ int ingresarDificultad ()
 
 void partida(unsigned dificultad, const char* nombreJugador){
 
-//    char fin = '0';
-//    tJugador jugador;
-//    tIA ia;
-//    tPilaEstatica mazo;
-//    tPilaEstatica descarte;
-//
-//    ia.dificultad = dificultad;
-//    strcpy(jugador.nombre,nombreJugador);
-//    jugador.puntaje = 0;
-//
-//    ///Preparativos antes de comenzar el juego
-//    crearPila(&mazo);
-//    mezclarMazo(&mazo);
+    char fin = '0';
+    tJugador jugador;
+    tIA ia;
+    tMazo mazo;
+    tMazo descarte;
 
-////Se usa para probar mezclar mazo
-//    for(int i=0;i<TAM_MAZO;i++){
-//        int aux;
-//        desapilar(&mazo,&aux,sizeof(unsigned));
-//        printf("%d ",aux);
-//    }
-//    system("pause");
+    ia.dificultad = dificultad;
+    strcpy(jugador.nombre,nombreJugador);
+    jugador.puntaje = 0;
+    ia.puntaje = 0;
 
+    ///Preparativos antes de comenzar el juego
+    crearMazo(&mazo);
+    crearMazo(&descarte);
+    llenarMazo(&mazo);
+    puts("Mazo inicial: "); //test
+    mostrarMazo(&mazo); //test
 
-//    repartirCartas(&mazo, &jugador, &ia);
+    puts("\n\nMazo mezclado: "); //test
+    mezclarMazo(&mazo);
+    mostrarMazo(&mazo); //test
 
+    repartirCartas(&mazo, &jugador, &ia);
+    mostrarCartasJugador(jugador); ///test, mover al loop despues
 
     ///loop
 //    while(fin != '1'){
 //       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
-//            fin = '0';
+//            fin = '1';
 //       else
 //        if(turnoIa(&ia,&mazo,&descarte) == GANO)
-//            fin = '0';
+//            fin = '1';
 //    }
 
     //guardarResultado()
+
+    fflush(stdin);
+    getchar();
+    system("cls");
 }
 
-void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia){
+void repartirCartas(tMazo* mazo, tJugador* jugador, tIA* ia){
     unsigned i;
-    for(i = 0 ; i < 3 ; i++){
-        desapilar(mazo,&jugador->mano[i],sizeof(unsigned));
-        desapilar(mazo,&ia->mano[i],sizeof(unsigned));
+
+    if(mazo->tope == TAM_MAZO)
+        return;
+
+    for(i = 0 ; i < TAM_MANO ; i++){
+        robarCarta(mazo,&jugador->mano[i],sizeof(unsigned));
+        robarCarta(mazo,&ia->mano[i],sizeof(unsigned));
     }
 }
 
 void mostrarCartasJugador(tJugador jugador){
     unsigned i;
     printf("Mano de %s: \n\n", jugador.nombre);
-    for(i = 0 ; i < 3 ; i++){
-        switch(jugador.mano[i]){
+    for(i = 0 ; i < TAM_MANO ; i++){
+        switch(jugador.mano[i].codigo){
         case MAS_DOS:
             printf("%u- Mas dos puntos\n",i+1);
             break;

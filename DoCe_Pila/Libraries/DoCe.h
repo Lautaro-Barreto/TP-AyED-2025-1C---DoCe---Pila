@@ -5,18 +5,13 @@
 #include<stdio.h>
 #include<ctype.h>
 
-#include"pila.h"
-//#include"cola.h"
-#include"listaSimple.h"
 #include"carta.h"
 #include"mazo.h"
 
 #define GANO     6
 #define SIGUE    7
 
-///Cantidades que nos importan
 #define TAM_MANO         3
-#define TAM_MAZO        40
 #define TAM_NOM         26
 
 /*idea:
@@ -31,13 +26,13 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 
 typedef struct{
     char nombre[TAM_NOM];
-    unsigned mano[TAM_MANO];
+    tCarta mano[TAM_MANO];
     unsigned puntaje;
 }tJugador;
 
 typedef struct{
     unsigned dificultad;
-    unsigned mano[TAM_MANO];
+    tCarta mano[TAM_MANO];
     unsigned puntaje;
 }tIA;
 
@@ -46,10 +41,10 @@ void jugar();
 void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
 int ingresarDificultad ();
 void partida(unsigned dificultad, const char* nombreJugador);
-void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
+void repartirCartas(tMazo* mazo, tJugador* jugador, tIA* ia);
 void mostrarCartasJugador(tJugador jugador);
-int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
-int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte);
+int turnoJugador(tJugador* jugador, tMazo* mazo, tMazo* descarte);
+int turnoIa(tIA* ia, tMazo* mazo, tMazo* descarte);
 /// guardarResultado()
 /// verRanking()
 

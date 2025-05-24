@@ -7,36 +7,34 @@
 	<string.h>
 	"utilidades.h"
 
-1747157948 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1748125084 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
 1747157450 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
 	"listaSimple.h"
 
-1747151681 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
+1748113888 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1747333980 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748124799 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1747334985 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1748125174 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
-	<time.h>
-	"pila.h"
-	"cola.h"
-	"listaSimple.h"
+	"carta.h"
+	"mazo.h"
 
-1747157450 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
+1748113888 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
 	<string.h>
 	"utilidades.h"
 
-1747157450 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
+1748113888 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1747158965 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748115917 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
@@ -96,5 +94,24 @@
 	<time.h>
 
 1748110490 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
+	"mazo.h"
+
+1748115917 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
+	"carta.h"
+
+1748115917 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
+	<stdlib.h>
+	<stdio.h>
+
+1748116648 c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
+	"carta.h"
+	"utilidades.h"
+	<string.h>
+	<time.h>
+
+1748116115 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.c
+	"utilidades.h"
+
+1748117380 source:c:\users\usuario\repos\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
 	"mazo.h"
 
