@@ -43,6 +43,7 @@ int menu(){
     fflush(stdin);
     opc = getchar();
     opc = toupper(opc);
+    while( getchar()!='\n');
     system("cls");
     }while(opc<'A' || opc>'C');
 
