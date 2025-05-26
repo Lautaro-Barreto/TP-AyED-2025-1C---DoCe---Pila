@@ -5,13 +5,6 @@
 
 int main()
 {
-    tMazo m;
-    crearMazo(&m);
-    llenarMazo(&m);
-    recorrerMazo(&m);
-    puts("\nMAZO MEZCLADO");
-    mezclarMazo(&m);
-    recorrerMazo(&m);
     char opc = 0;
 
     while(opc != 'C'){
