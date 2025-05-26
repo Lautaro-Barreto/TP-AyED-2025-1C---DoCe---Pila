@@ -6,7 +6,7 @@
      Cosas que se repiten en varias bibliotecas
 *---------------------------------------------------------*/
 
-#define TODO_OK      3
+#define TODO_OK 0
 
 #define MINIMO( x , y ) (( x ) <= ( y ) ? ( x ) : ( y ) )
 
