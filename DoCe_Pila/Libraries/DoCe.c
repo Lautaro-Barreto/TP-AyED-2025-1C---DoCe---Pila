@@ -52,30 +52,13 @@ int menu(){
 
 void jugar(){
     unsigned dificultad;//¿Acá podríamos poner directamente al tJugador?
-    char nombreJugador[TAM_NOM];
+    tJugador humano;
 
-    ingresarNombre(nombreJugador,TAM_NOM);
+    ingresarNombre(humano.nombre,TAM_NOM_JUG);
     dificultad=ingresarDificultad();
-    partida(dificultad, nombreJugador);
+    partida(dificultad, humano.nombre);
 }
 
-void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
-{
-    int pasada=0;
-    char*entrada;
-    do
-    {
-        if(pasada)
-            printf("\nEl nombre ingresado no es valido");
-        pasada=printf("\nIngrese el nombre del jugador (Maximo %d caracteres): ",tamEntrada); //el valor de pasada dejara de ser cero y sabre que entro por lo menos una vez
-        fgets(bufferEntra,tamEntrada,stdin);
-        entrada=strchr(bufferEntra,'\n');
-        if(entrada)
-            *entrada='\0';
-        else
-            while( getchar()!='\n');
-    }while(!strlen(bufferEntra));
-}
 int ingresarDificultad ()
 {
     int dificultad=0,descartados;
@@ -136,40 +119,14 @@ void partida(unsigned dificultad, const char* nombreJugador){
     //guardarResultado()
 }
 
-void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia){
-    unsigned i;
-    for(i = 0 ; i < 3 ; i++){
-        desapilar(mazo,&jugador->mano[i],sizeof(unsigned));
-        desapilar(mazo,&ia->mano[i],sizeof(unsigned));
-    }
-}
+void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
+{
+    unsigned i,tam=sizeof(jugador->mano[0]);
 
-void mostrarCartasJugador(tJugador jugador){
-    unsigned i;
-    printf("Mano de %s: \n\n", jugador.nombre);
-    for(i = 0 ; i < 3 ; i++){
-        switch(jugador.mano[i]){
-        case MAS_DOS:
-            printf("%u- Mas dos puntos\n",i+1);
-            break;
-        case MAS_UNO:
-            printf("%u- Mas un punto\n",i+1);
-            break;
-        case MENOS_UNO:
-            printf("%u- Menos un punto al oponente\n",i+1);
-            break;
-        case MENOS_DOS:
-            printf("%u- Menos dos puntos al oponente\n",i+1);
-            break;
-        case REPETIR_TURNO:
-            printf("%u- Repetir turno\n",i+1);
-            break;
-        case ESPEJO:
-            printf("%u- Espejo\n",i+1);
-            break;
-        }
+    for(i = 0 ; i < TAM_MANO ; i++){
+        robarCarta(mazo,&jugador->mano[i],tam);
+        robarCarta(mazo,&ia->mano[i],tam);
     }
-    printf("Puntaje: %d",jugador.puntaje);
 }
 
 ///Completar - Nico

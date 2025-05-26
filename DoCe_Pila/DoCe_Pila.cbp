@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Libraries/carta.h" />
+		<Unit filename="Libraries/jugador.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/jugador.h" />
 		<Unit filename="Libraries/mazo.c">
 			<Option compilerVar="CC" />
 		</Unit>

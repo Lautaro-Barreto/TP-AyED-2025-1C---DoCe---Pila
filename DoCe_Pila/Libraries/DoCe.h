@@ -6,17 +6,12 @@
 #include<ctype.h>
 
 #include"pila.h"
-//#include"cola.h"
-#include"listaSimple.h"
 #include"carta.h"
+#include"jugador.h"
 #include"mazo.h"
 
 #define GANO     6
 #define SIGUE    7
-
-///Cantidades que nos importan
-#define TAM_MANO         3
-#define TAM_NOM         26
 
 /*idea:
 Que a cada tipo de carta le corresponda un numero (0 1 2 3 4 5)
@@ -28,27 +23,11 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 
 /**Por favor, si van a declarar una estructura usen la notación tNombre (ej: tLista, tNodo) así todas se escriben igual**/
 
-typedef struct{
-    char nombre[TAM_NOM];
-    unsigned mano[TAM_MANO];
-    unsigned puntaje;
-}tJugador;
-
-typedef struct{
-    unsigned dificultad;
-    unsigned mano[TAM_MANO];
-    unsigned puntaje;
-}tIA;
-
 int menu();
 void jugar();
-void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
 int ingresarDificultad ();
 void partida(unsigned dificultad, const char* nombreJugador);
-void repartirCartas(tPilaEstatica* mazo, tJugador* jugador, tIA* ia);
-void mostrarCartasJugador(tJugador jugador);
-int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte);
-int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte);
+void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 /// guardarResultado()
 /// verRanking()
 
