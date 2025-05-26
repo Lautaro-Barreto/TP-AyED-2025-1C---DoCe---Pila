@@ -12,7 +12,7 @@
 
 typedef struct
 {
-    tCarta mazo[MAX_CARTAS];
+    tCarta mazo[TAM_MAZO];
     int cantCartas;
 }tMazo;
 

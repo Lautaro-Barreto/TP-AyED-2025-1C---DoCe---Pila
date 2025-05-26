@@ -16,7 +16,6 @@
 
 ///Cantidades que nos importan
 #define TAM_MANO         3
-#define TAM_MAZO        40
 #define TAM_NOM         26
 
 /*idea:

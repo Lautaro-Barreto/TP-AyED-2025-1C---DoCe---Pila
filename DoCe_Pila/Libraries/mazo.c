@@ -10,7 +10,7 @@ int llenarMazo(tMazo*p)
     tCarta carta;
     int indConf,tope,apiladas,cantTipos,copiasDeTipo;//indConf = indice del vector
                                                 //con las configuración de las cartas
-    if(MAX_CARTAS!=obtenerCartasTotales())
+    if(TAM_MAZO!=obtenerCartasTotales())
         return CANT_CARTAS_INVALIDA;
 
     cantTipos=obtenerCantTipos();
@@ -59,7 +59,7 @@ int robarCarta(tMazo*p,void*dest,unsigned tam)
 }
 int ponerEnMazo(tMazo* mazo, const void* carta,unsigned tam)
 {
-    if(mazo->cantCartas >= MAX_CARTAS)
+    if(mazo->cantCartas >= TAM_MAZO)
         return MAZO_LLENO;
 
     mazo->cantCartas++;

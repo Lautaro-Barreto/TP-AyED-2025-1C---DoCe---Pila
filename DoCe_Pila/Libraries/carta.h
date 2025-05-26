@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-#define MAX_CARTAS 40
+#define TAM_MAZO 40
 
 typedef enum
 {
