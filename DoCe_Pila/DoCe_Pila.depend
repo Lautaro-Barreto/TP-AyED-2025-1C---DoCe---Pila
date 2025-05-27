@@ -51,7 +51,7 @@
 
 1748273932 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1748277733 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748305465 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
 1748299472 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
@@ -78,7 +78,7 @@
 1748109272 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1748299490 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748305434 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
@@ -96,7 +96,7 @@
 	<time.h>
 	"utilidades.h"
 
-1748276649 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
+1748305434 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
 	"mazo.h"
 
 1748278396 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h

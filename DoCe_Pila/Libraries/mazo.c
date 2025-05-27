@@ -32,7 +32,6 @@ void mezclarMazo(tMazo*p)
 {
     int indiceRand,indice,tam=sizeof(p->mazo[0]);
 
-    srand(time(NULL));
     for(indice=p->cantCartas-1; indice>=0; indice--)
     {
         indiceRand=rand()%p->cantCartas;

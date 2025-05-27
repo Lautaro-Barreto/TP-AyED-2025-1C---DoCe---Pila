@@ -67,7 +67,7 @@ void jugar(){
     repartirCartas(&mazoActivo,&humano,&maquina);
 
     humano.puntaje=maquina.puntaje=0;
-    dificultad=rand()%2;//númerito mágico porque solo son dos jugadores...
+    dificultad=rand()%2;//numerito mágico porque solo son dos jugadores...
 
     partida(dificultad, humano.nombre);
 }

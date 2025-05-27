@@ -6,6 +6,7 @@
 int main()
 {
     char opc = 0;
+    srand(time(NULL));
 
     while(opc != 'C'){
         opc = menu();
