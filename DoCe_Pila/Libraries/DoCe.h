@@ -12,6 +12,7 @@
 
 #define GANO     6
 #define SIGUE    7
+#define HUMANO    0
 
 /*idea:
 Que a cada tipo de carta le corresponda un numero (0 1 2 3 4 5)

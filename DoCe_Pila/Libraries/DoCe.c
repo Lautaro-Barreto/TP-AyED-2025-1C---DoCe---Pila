@@ -51,11 +51,24 @@ int menu(){
 }
 
 void jugar(){
-    unsigned dificultad;//¿Acá podríamos poner directamente al tJugador?
-    tJugador humano;
+    unsigned dificultad,turnoDe;//Si se les ocurren nombre "más significativos", cambienlos sin dudar
+    tJugador humano,maquina;
+    tMazo mazoActivo,mazoDesc;
 
     ingresarNombre(humano.nombre,TAM_NOM_JUG);
+
     dificultad=ingresarDificultad();
+
+    crearMazo(&mazoActivo);
+    crearMazo(&mazoDesc);
+
+    llenarMazo(&mazoActivo);
+    mezclarMazo(&mazoActivo);
+    repartirCartas(&mazoActivo,&humano,&maquina);
+
+    humano.puntaje=maquina.puntaje=0;
+    dificultad=rand()%2;//númerito mágico porque solo son dos jugadores...
+
     partida(dificultad, humano.nombre);
 }
 
