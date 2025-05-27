@@ -27,7 +27,8 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 int menu();
 void jugar();
 int ingresarDificultad ();
-void partida(unsigned dificultad, const char* nombreJugador);
+void partida(unsigned dificultad, unsigned turnoDe, tJugador*humano,
+             tJugador*maquina, tMazo*principal, tMazo*descar);
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 /// guardarResultado()
 /// verRanking()

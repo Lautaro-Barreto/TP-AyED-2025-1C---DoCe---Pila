@@ -51,7 +51,7 @@ int menu(){
 }
 
 void jugar(){
-    unsigned dificultad,turnoDe;//Si se les ocurren nombre "más significativos", cambienlos sin dudar
+    unsigned dificultad;//Si se les ocurren nombre "más significativos", cambienlos sin dudar
     tJugador humano,maquina;
     tMazo mazoActivo,mazoDesc;
 
@@ -67,9 +67,8 @@ void jugar(){
     repartirCartas(&mazoActivo,&humano,&maquina);
 
     humano.puntaje=maquina.puntaje=0;
-    dificultad=rand()%2;//numerito mágico porque solo son dos jugadores...
 
-    partida(dificultad, humano.nombre);
+    partida(dificultad, rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc);//numerito mágico porque solo son dos jugadores...
 }
 
 int ingresarDificultad ()
@@ -92,7 +91,8 @@ int ingresarDificultad ()
     return dificultad;
 }
 
-void partida(unsigned dificultad, const char* nombreJugador){
+void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
+             tJugador*maquina,tMazo*principal,tMazo*descar){
 
 //    char fin = '0';
 //    tJugador jugador;
@@ -142,7 +142,7 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
     }
 }
 
-///Completar - Nico
+///Completar
 //int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
 //    mostrarCartasJugador(*jugador);
 //
@@ -152,8 +152,8 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
 //    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
 //}
 //
-///Completar - Matías
+///Completar
 //int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
 //}
 //
-///completar - Federico: guardarResultado() y verRanking() (la parte de conexión con la API)
+///completar: guardarResultado() y verRanking() (la parte de conexión con la API)
