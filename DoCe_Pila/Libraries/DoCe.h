@@ -10,9 +10,11 @@
 #include"jugador.h"
 #include"mazo.h"
 
-#define GANO     6
-#define SIGUE    7
-#define HUMANO    0
+#define GANO 6
+#define SIGUE 7
+#define JUGADOR 0
+#define MAQUINA 1
+#define PUNTAJE_GANADOR 12
 
 /*idea:
 Que a cada tipo de carta le corresponda un numero (0 1 2 3 4 5)
@@ -27,7 +29,7 @@ al contador que está en dicha posicion del vector y apilar una carta con el nume
 int menu();
 void jugar();
 int ingresarDificultad ();
-void partida(unsigned dificultad, unsigned turnoDe, tJugador*humano,
+void partida(unsigned dificultad, unsigned turnoDe, tJugador*jugador,
              tJugador*maquina, tMazo*principal, tMazo*descar);
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 /// guardarResultado()

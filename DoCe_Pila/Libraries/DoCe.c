@@ -73,7 +73,7 @@ void jugar(){
 
 int ingresarDificultad ()
 {
-    int dificultad=0,descartados;
+    int dificultad=0;
 
     puts("\nSeleccione el nivel de dificultad: \n\n"
          "1) Facil\n"
@@ -83,53 +83,64 @@ int ingresarDificultad ()
     do
     {
         scanf("%d",&dificultad);
-        while((descartados=getchar())!='\n');
+        while( getchar()!='\n' );
         if(dificultad<1 || dificultad>3)
             puts("Valor invalido, ingrese 1,2 o 3");
     }
     while(dificultad<1 || dificultad>3);
     return dificultad;
 }
+int seleccionarCarta ()
+{
+    int opc=0;
 
-void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
-             tJugador*maquina,tMazo*principal,tMazo*descar){
+    printf("\nElija una carta\n");
+    do
+    {
+        scanf("%d",&opc);
+        while( getchar()!='\n' );
+        if(opc<0 || opc>2)//estos numeritos magicos me planteo cambiarlos luego
+            printf("Valor invalido, ingrese un valor entre 0-2\n");
+    }
+    while(opc<0 || opc>2);
+    return opc;
+}
 
-//    char fin = '0';
-//    tJugador jugador;
-//    tIA ia;
-//    tPilaEstatica mazo;
-//    tPilaEstatica descarte;
-//
-//    ia.dificultad = dificultad;
-//    strcpy(jugador.nombre,nombreJugador);
-//    jugador.puntaje = 0;
-//
-//    ///Preparativos antes de comenzar el juego
-//    crearPila(&mazo);
-//    mezclarMazo(&mazo);
+void partida(unsigned dificultad,unsigned turnoDe,tJugador*jugador,
+             tJugador*maquina,tMazo*principal,tMazo*descarte)
+{
+    unsigned tamCart=sizeof(tCarta), cartJug, cartMaq, *ultInd;
+    tMazo*temporal;
+    tJugador*jugadorAct;//para facilitar las operaciones con el mazo
 
-////Se usa para probar mezclar mazo
-//    for(int i=0;i<TAM_MAZO;i++){
-//        int aux;
-//        desapilar(&mazo,&aux,sizeof(unsigned));
-//        printf("%d ",aux);
-//    }
-//    system("pause");
+    while( jugador->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
+    {
+        if( turnoDe==JUGADOR )
+        {
+            jugadorAct=jugador;
+            cartJug=seleccionarCarta();
 
-
-//    repartirCartas(&mazo, &jugador, &ia);
-
-
-    ///loop
-//    while(fin != '1'){
-//       if(turnoJugador(&jugador, &mazo, &descarte) == GANO)
-//            fin = '0';
-//       else
-//        if(turnoIa(&ia,&mazo,&descarte) == GANO)
-//            fin = '0';
-//    }
-
-    //guardarResultado()
+            ultInd=&cartJug;
+        }
+        else
+        {
+            jugadorAct=maquina;
+//            seleccionCartaIA()
+            cartMaq=0;//línea temporal
+            ultInd=&cartMaq;
+        }
+//        procesarCarta
+        ponerEnMazo(descarte, &jugadorAct->mano[*ultInd], tamCart);
+        if( robarCarta(principal, &jugador->mano[*ultInd], tamCart)!=TODO_OK )
+        {
+            mezclarMazo(descarte);
+            temporal=principal;
+            principal=descarte;
+            descarte=temporal;
+            robarCarta(principal, &jugador->mano[*ultInd], tamCart);
+        }
+        turnoDe=!turnoDe;
+    }
 }
 
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
