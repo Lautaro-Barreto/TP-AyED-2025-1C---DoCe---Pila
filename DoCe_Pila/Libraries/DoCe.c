@@ -75,17 +75,17 @@ int elegirCarta ()
     while(opc<0 || opc>2);
     return opc;
 }
-int evaluarEleccion(eEfecto codCart,int puntajeIA, eEfecto ultCartIA, int valorCarta)//avisa al jugador que su jugada
+int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al jugador que su jugada
 {                                                                            //puede no tener el efecto deseado
     int entrada=CONFIRMAR;
 
-    if( (codCart==MENOS_DOS || codCart==MENOS_UNO) && puntajeIA<abs(valorCarta) )
+    if( (elegida->codigo==MENOS_DOS || elegida->codigo==MENOS_UNO) && puntajeIA<abs(elegida->valor) )
     {
         printf("Seguro que quieres jugar esa carta? Si=1 No=0\n");
-        entrada=-1;
+        entrada=-1;//¿Numeritos magico?
     }
 
-    if( codCart==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
+    if( elegida->codigo==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
     {
         printf("Seguro que quieres descargar la carta espejo? Si=1 No=0\n");
         entrada=-1;
@@ -122,7 +122,8 @@ void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
     unsigned tamCart=sizeof(tCarta), indice;
     int verificar;
     tMazo*temporal;
-    eEfecto ultimaDescar=REPETIR_TURNO;
+    eEfecto ultDescar=REPETIR_TURNO;
+    int ultValDesc=0;
     tJugador*jugadorAct;//para facilitar las operaciones con el mazo
 
     while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
@@ -133,10 +134,9 @@ void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
             do
             {
                 indice=elegirCarta();
-                verificar=evaluarEleccion(humano->mano[indice].codigo, maquina->puntaje,
-                                ultimaDescar, humano->mano[indice].valor);
+                verificar=evaluarEleccion(&humano->mano[indice], maquina->puntaje,
+                                ultDescar);
             }while( verificar!=CONFIRMAR );
-            ultimaDescar=humano->mano[indice].codigo;
         }
         else
         {
@@ -146,6 +146,9 @@ void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
         }
 //        aplicarEfecto
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
+        ultDescar=jugadorAct->mano[indice].codigo;
+        ultValDesc=jugadorAct->mano[indice].valor;
+
         if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!=TODO_OK )
         {
             mezclarMazo(descarte);
