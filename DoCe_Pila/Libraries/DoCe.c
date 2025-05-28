@@ -67,9 +67,10 @@ int elegirCarta ()
     printf("\nElija una carta\n");
     do
     {
+        fflush(stdin);
         scanf("%d",&opc);
         while( getchar()!='\n' );
-        if(opc<0 || opc>2)//estos numeritos magicos me planteo cambiarlos luego
+        if(opc<0 || opc>TAM_MANO-1)
             printf("Valor invalido, ingrese un valor entre 0-2\n");
     }
     while(opc<0 || opc>2);
@@ -131,6 +132,7 @@ void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
         if( turnoDe==JUGADOR )
         {
             jugadorAct=humano;
+            mostrarJugador(jugadorAct,mostrarCarta);
             do
             {
                 indice=elegirCarta();
