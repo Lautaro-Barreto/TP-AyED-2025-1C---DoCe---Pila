@@ -9,11 +9,14 @@
 #include"carta.h"
 #include"jugador.h"
 #include"mazo.h"
+#include"math.h"
 
 #define GANO 6
 #define SIGUE 7
 #define JUGADOR 0
 #define MAQUINA 1
+#define CONFIRMAR 1
+#define CANCELAR 0
 #define PUNTAJE_GANADOR 12
 
 /*idea:
@@ -32,6 +35,9 @@ int ingresarDificultad ();
 void partida(unsigned dificultad, unsigned turnoDe, tJugador*jugador,
              tJugador*maquina, tMazo*principal, tMazo*descar);
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
+int elegirCarta ();
+int evaluarEleccion(eEfecto codCart,int puntajeIA, eEfecto ultCartIA, int valorCarta);
+void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int puntJug,int puntRival,unsigned*turnoDe);
 /// guardarResultado()
 /// verRanking()
 

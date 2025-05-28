@@ -1,35 +1,5 @@
 #include "DoCe.h"
 
-/** Si quieren que la mano del jugador y de la ia sean listas de 3 cartas, haganlo (?)*/
-
-/*
-*----------------TO-DO-LIST---------------*
-
-partida()
-|
-|-> mezclarMazo()
-|-> repartirCartas() -> desapilar 1 para cada 1 hasta que ambos tengan 3
-|-> loop
-     |-> turnoJugador()
-     |		|-> mostrarCartas()
-     |		|-> usarCarta()
-     |		|-> jugador.puntaje == 12 ? Si sí, gana y sale del loop. Si no, sigue.
-     |		|-> El MAZO está VACÍO ? Si sí, mezclarDescarteYusarDeMazo(). Si no, sigue normal.
-     |		|-> robarDelMazo() -> desapilar de pila
-     |
-     |-> turnoIA()---> un switch de tres salidas con cada camino segun la dificultad
-            |-> (jugar una carta según nivel de dificultad)
-          	|-> IA.puntaje == 12? Si sí, gana y sale del loop. Si no, sigue.
-          	|-> El MAZO está VACÍO ? Si sí, mezclarDescarteYusarDeMazo(). Si no, sigue normal.
-            |-> robarDelMazo() -> desapilar de pila
-            |-> vuelve a empezar el loop
-
-verRanking ---> API
-
-guardarResultado ---> API
-
-*/
-
 int menu(){
 
     char opc;
@@ -90,7 +60,7 @@ int ingresarDificultad ()
     while(dificultad<1 || dificultad>3);
     return dificultad;
 }
-int seleccionarCarta ()
+int elegirCarta ()
 {
     int opc=0;
 
@@ -105,39 +75,84 @@ int seleccionarCarta ()
     while(opc<0 || opc>2);
     return opc;
 }
+int evaluarEleccion(eEfecto codCart,int puntajeIA, eEfecto ultCartIA, int valorCarta)//avisa al jugador que su jugada
+{                                                                            //puede no tener el efecto deseado
+    int entrada=CONFIRMAR;
 
-void partida(unsigned dificultad,unsigned turnoDe,tJugador*jugador,
+    if( (codCart==MENOS_DOS || codCart==MENOS_UNO) && puntajeIA<abs(valorCarta) )
+    {
+        printf("Seguro que quieres jugar esa carta? Si=1 No=0\n");
+        entrada=-1;
+    }
+
+    if( codCart==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
+    {
+        printf("Seguro que quieres descargar la carta espejo? Si=1 No=0\n");
+        entrada=-1;
+    }
+
+    while( entrada!=CONFIRMAR && entrada!=CANCELAR )
+    {
+        scanf("%d",&entrada);
+        while( getchar()!='\n' );
+
+        if(entrada!=CONFIRMAR && entrada!=CANCELAR)
+            printf("Ese valor no es valido\n");
+    }
+
+    return entrada;
+}
+void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int puntJug,int puntRival,unsigned*turnoDe)
+{//¿por qué no usaste un swithc? Porque pensaba en la posibilidad
+    if( valorCarta>0 )//de que puedan agregarse cartas +n/-n. Pero si quieren cambiarlo haganlo
+        puntJug+=valorCarta;
+    if( valorCarta<0 && (puntRival=+valorCarta)<0 )
+        puntRival=0;
+    if( carta==REPETIR_TURNO )
+        *turnoDe=!*turnoDe;
+    if( valorCartaRival<0 )
+    {
+        puntJug=-valorCartaRival;
+        puntRival=+valorCartaRival;
+    }
+}
+void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
              tJugador*maquina,tMazo*principal,tMazo*descarte)
 {
-    unsigned tamCart=sizeof(tCarta), cartJug, cartMaq, *ultInd;
+    unsigned tamCart=sizeof(tCarta), indice;
+    int verificar;
     tMazo*temporal;
+    eEfecto ultimaDescar=REPETIR_TURNO;
     tJugador*jugadorAct;//para facilitar las operaciones con el mazo
 
-    while( jugador->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
+    while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
     {
         if( turnoDe==JUGADOR )
         {
-            jugadorAct=jugador;
-            cartJug=seleccionarCarta();
-
-            ultInd=&cartJug;
+            jugadorAct=humano;
+            do
+            {
+                indice=elegirCarta();
+                verificar=evaluarEleccion(humano->mano[indice].codigo, maquina->puntaje,
+                                ultimaDescar, humano->mano[indice].valor);
+            }while( verificar!=CONFIRMAR );
+            ultimaDescar=humano->mano[indice].codigo;
         }
         else
         {
             jugadorAct=maquina;
 //            seleccionCartaIA()
-            cartMaq=0;//línea temporal
-            ultInd=&cartMaq;
+            indice=0;
         }
-//        procesarCarta
-        ponerEnMazo(descarte, &jugadorAct->mano[*ultInd], tamCart);
-        if( robarCarta(principal, &jugador->mano[*ultInd], tamCart)!=TODO_OK )
+//        aplicarEfecto
+        ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
+        if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!=TODO_OK )
         {
             mezclarMazo(descarte);
             temporal=principal;
             principal=descarte;
             descarte=temporal;
-            robarCarta(principal, &jugador->mano[*ultInd], tamCart);
+            robarCarta(principal, &jugadorAct->mano[indice], tamCart);
         }
         turnoDe=!turnoDe;
     }
@@ -153,16 +168,6 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
     }
 }
 
-///Completar
-//int turnoJugador(tJugador* jugador, tPilaEstatica* mazo, tPilaEstatica* descarte){
-//    mostrarCartasJugador(*jugador);
-//
-//    fflush(stdin);
-//    getchar(); //estas dos lineas eran para ver algo nomas, quitalas cuando hagas esta parte(?)
-//
-//    //jugador.puntaje == 12 ? Ganó, salir por GANO : salir por SIGUE
-//}
-//
 ///Completar
 //int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
 //}
