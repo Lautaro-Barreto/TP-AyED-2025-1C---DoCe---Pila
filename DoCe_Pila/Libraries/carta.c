@@ -16,7 +16,7 @@ void mostrarCarta(const void*p)
 {
     tCarta*carta=(tCarta*)p;
     if(carta)
-        printf("%s",carta->descrip);
+        printf("%s\n",carta->descrip);
 }
 int obtenerCantTipos()
 {

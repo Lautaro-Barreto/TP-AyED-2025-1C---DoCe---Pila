@@ -21,7 +21,7 @@ int menu(){
 }
 
 void jugar(){
-    unsigned dificultad;//Si se les ocurren nombre "más significativos", cambienlos sin dudar
+    unsigned dificultad;//Con esta variable determinamos que IA juega (Facil/medio/dificil) o eso tengo pensado
     tJugador humano,maquina;
     tMazo mazoActivo,mazoDesc;
 
@@ -38,7 +38,7 @@ void jugar(){
 
     humano.puntaje=maquina.puntaje=0;
 
-    partida(dificultad, rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc);//numerito mágico porque solo son dos jugadores...
+    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc);//tenemos que agregar a la IA
 }
 
 int ingresarDificultad ()
@@ -64,7 +64,7 @@ int elegirCarta ()
 {
     int opc=0;
 
-    printf("\nElija una carta\n");
+    printf("\nElija una carta: ");
     do
     {
         fflush(stdin);
@@ -82,7 +82,8 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     if( (elegida->codigo==MENOS_DOS || elegida->codigo==MENOS_UNO) && puntajeIA<abs(elegida->valor) )
     {
-        printf("Seguro que quieres jugar esa carta? Si=1 No=0\n");
+        printf("Seguro que quieres jugar esa carta?\n"
+               "El puntaje de tu rival es %d (Si=1 No=0)",puntajeIA);
         entrada=-1;//¿Numeritos magico?
     }
 
@@ -117,7 +118,7 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int puntJug,
         puntRival=+valorCartaRival;
     }
 }
-void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
+void partida(unsigned turnoDe,tJugador*humano,
              tJugador*maquina,tMazo*principal,tMazo*descarte)
 {
     unsigned tamCart=sizeof(tCarta), indice;
@@ -135,6 +136,7 @@ void partida(unsigned dificultad,unsigned turnoDe,tJugador*humano,
             mostrarJugador(jugadorAct,mostrarCarta);
             do
             {
+                mostrarJugador(humano,mostrarCarta);
                 indice=elegirCarta();
                 verificar=evaluarEleccion(&humano->mano[indice], maquina->puntaje,
                                 ultDescar);

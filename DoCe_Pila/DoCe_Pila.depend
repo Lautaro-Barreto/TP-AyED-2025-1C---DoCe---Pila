@@ -51,10 +51,10 @@
 
 1748273932 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1748376262 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748475524 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748375276 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1748475358 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
@@ -62,6 +62,7 @@
 	"carta.h"
 	"jugador.h"
 	"mazo.h"
+	"math.h"
 
 1748109272 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
 	<string.h>
@@ -83,7 +84,7 @@
 	<stdlib.h>
 	"Libraries/DoCe.h"
 
-1748192822 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
+1748473259 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
 	"carta.h"
 
 1748276649 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
@@ -103,7 +104,7 @@
 	"carta.h"
 	"string.h"
 
-1748278396 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
+1748475150 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
 	"jugador.h"
 
 1748470498 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c

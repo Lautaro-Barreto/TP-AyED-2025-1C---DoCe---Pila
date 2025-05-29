@@ -22,12 +22,11 @@ void mostrarJugador(const tJugador* jugador,fMost imprimirCarta)
 {
     unsigned i;
 
-    printf("Mano de %s: \n\n", jugador->nombre);
+    printf("Jugador: %s\nPuntaje:%d\nMano: \n\n", jugador->nombre,jugador->puntaje);
     for(i = 0 ; i < TAM_MANO ; i++)
         {
             printf("%d-",i);
             imprimirCarta(&jugador->mano[i]);
             printf("\n");
         }
-    printf("\nPuntaje: %d\n",jugador->puntaje);
 }
