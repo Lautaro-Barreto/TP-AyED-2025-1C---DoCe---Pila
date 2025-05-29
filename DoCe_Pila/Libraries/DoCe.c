@@ -133,7 +133,6 @@ void partida(unsigned turnoDe,tJugador*humano,
         if( turnoDe==JUGADOR )
         {
             jugadorAct=humano;
-            mostrarJugador(jugadorAct,mostrarCarta);
             do
             {
                 mostrarJugador(humano,mostrarCarta);
