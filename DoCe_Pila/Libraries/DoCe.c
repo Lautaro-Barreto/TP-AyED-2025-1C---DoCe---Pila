@@ -104,18 +104,18 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     return entrada;
 }
-void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int puntJug,int puntRival,unsigned*turnoDe)
+void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,int*puntRival,unsigned*turnoDe)
 {//¿por qué no usaste un swithc? Porque pensaba en la posibilidad
     if( valorCarta>0 )//de que puedan agregarse cartas +n/-n. Pero si quieren cambiarlo haganlo
-        puntJug+=valorCarta;
-    if( valorCarta<0 && (puntRival=+valorCarta)<0 )
-        puntRival=0;
+        *puntJug+=valorCarta;
+    if( valorCarta<0 && (*puntRival=+valorCarta)<0 )
+        *puntRival=0;
     if( carta==REPETIR_TURNO )
         *turnoDe=!*turnoDe;
     if( valorCartaRival<0 )
     {
-        puntJug=-valorCartaRival;
-        puntRival=+valorCartaRival;
+        *puntJug=-valorCartaRival;
+        *puntRival=+valorCartaRival;
     }
 }
 void partida(unsigned turnoDe,tJugador*humano,

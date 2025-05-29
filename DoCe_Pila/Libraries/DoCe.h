@@ -37,7 +37,7 @@ void partida(unsigned turnoDe, tJugador*jugador,
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 int elegirCarta ();
 int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA);
-void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int puntJug,int puntRival,unsigned*turnoDe);
+void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,int*puntRival,unsigned*turnoDe);
 /// guardarResultado()
 /// verRanking()
 
