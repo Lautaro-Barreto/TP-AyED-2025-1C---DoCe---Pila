@@ -18,7 +18,10 @@ int main()
             break;
         case 'B':
             puts("Elegiste VER RANKING");
-            curlTest();
+            guardarRanking("claure", 1);//obtenerRankings();
+            puts("");
+            obtenerRankings();
+            system("pause");
             break;
         case 'C':
             puts("¡ Gracias por jugar !");
