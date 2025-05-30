@@ -18,7 +18,7 @@ int main()
             break;
         case 'B':
             puts("Elegiste VER RANKING");
-            ///verRanking();
+            curlTest();
             break;
         case 'C':
             puts("¡ Gracias por jugar !");
