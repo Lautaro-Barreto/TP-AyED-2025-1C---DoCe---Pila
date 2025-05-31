@@ -9,11 +9,6 @@
 #define TODO_OK 0
 
 #define MINIMO( x , y ) (( x ) <= ( y ) ? ( x ) : ( y ) )
-
-typedef struct sNodo{
-    void* info;
-    unsigned tam;
-    struct sNodo* sig;
-}tNodo;
+#define SIN_MEM -10
 
 #endif // UTILIDADES_H_INCLUDED

@@ -130,7 +130,7 @@
 	<time.h>
 	"utilidades.h"
 
-1748541188 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1748722936 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
 1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
@@ -139,7 +139,7 @@
 	<string.h>
 	"utilidades.h"
 
-1748647727 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748722284 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
@@ -155,14 +155,15 @@
 	"API.h"
 	"math.h"
 
-1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748716914 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748712396 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
+1748725770 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
 	<stdio.h>
 	<stdlib.h>
 	"curl/include/curl/curl.h"
 	"utilidades.h"
+	"listaSimple.h"
 
 1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\curl.h
 	"curlver.h"
@@ -217,9 +218,18 @@
 
 1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748712428 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
+1748723571 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
 	"API.h"
 
 1746588688 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cjson\cjson.h
 	<stddef.h>
+
+1748723084 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utilidades.h"
+
+1748724046 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
+	"listaSimple.h"
 

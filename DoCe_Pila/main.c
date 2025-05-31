@@ -18,10 +18,9 @@ int main()
             break;
         case 'B':
             puts("Elegiste VER RANKING");
-            guardarRanking("claure", 1);//obtenerRankings();
-            puts("");
             obtenerRankings();
             system("pause");
+            system("cls");
             break;
         case 'C':
             puts("¡ Gracias por jugar !");

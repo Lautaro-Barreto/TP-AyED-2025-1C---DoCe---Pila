@@ -1,70 +1,161 @@
 #include "listaSimple.h"
 
-/*--------------------------------------------------------
-*                 LISTA SIMPLEMENTE ENLAZADA
-*---------------------------------------------------------*/
-
-void crearLista(tLista*pl)
-{
-    *pl=NULL;
+void crearLista(tLista* pl){
+    *pl = NULL;
 }
-void vaciarLista(tLista*pl)
-{
-    tNodo*elim;
 
-    while( *pl!=NULL )
-    {
-        elim=*pl;
-        *pl= elim->sig;
+int listaVacia(tLista* pl){
+    return *pl == NULL ? LISTA_VACIA : 0;
+}
+
+int listaLlena(tLista* pl){
+    return 0;
+}
+
+int insertarAlPrincipio(tLista* pl, void* dato, unsigned tamDato, comparar cmp, unsigned duplicado){
+
+    tNodo* nue, **pri = pl;
+    int comp = 0;
+
+    while(*pl && (comp=cmp((*pl)->info,dato)!=0) )
+        pl = &(*pl)->sig;
+
+    if(!duplicado && *pl && comp == 0)
+        return DUPLICADO;
+
+    pl = pri;
+
+    nue = (tNodo*)malloc(sizeof(tNodo));
+    if(!nue)
+        return SIN_MEM;
+    nue->info = malloc(tamDato);
+    if(!nue->info){
+        free(nue);
+        return SIN_MEM;
+    }
+    memcpy(nue->info,dato,tamDato);
+    nue->tamInfo = tamDato;
+    nue->sig = *pl;
+    *pl = nue;
+    return TODO_OK;
+}
+
+int insertarAlFinal(tLista* pl, void* dato, unsigned tamDato, comparar cmp, unsigned duplicado){
+
+    tNodo* nue;
+    int comp = 0;
+
+    while(*pl && (comp=cmp((*pl)->info,dato)!=0) )
+        pl = &(*pl)->sig;
+
+    if(!duplicado && *pl && comp == 0)
+        return DUPLICADO;
+
+    nue = (tNodo*)malloc(sizeof(tNodo));
+    if(!nue)
+        return SIN_MEM;
+    nue->info = malloc(tamDato);
+    if(!nue->info){
+        free(nue);
+        return SIN_MEM;
+    }
+    memcpy(nue->info,dato,tamDato);
+    nue->tamInfo = tamDato;
+    nue->sig = *pl;
+    *pl = nue;
+    return TODO_OK;
+}
+
+int insertarOrdenado(tLista* pl, void* dato, unsigned tamDato, comparar cmp, unsigned duplicado){
+
+    tNodo* nue;
+    int comp = -1;
+
+    while(*pl && (comp = cmp((*pl)->info,dato))<0 )
+        pl = &(*pl)->sig;
+
+    if(*pl && comp == 0 && !duplicado )
+        return DUPLICADO;
+
+    nue = (tNodo*)malloc(sizeof(tNodo));
+    if(!nue)
+        return SIN_MEM;
+    nue->info = malloc(tamDato);
+    if(!nue->info){
+        free(nue);
+        return SIN_MEM;
+    }
+    memcpy(nue->info,dato,tamDato);
+    nue->tamInfo = tamDato;
+    nue->sig = *pl;
+    *pl = nue;
+
+    return TODO_OK;
+}
+
+int eliminarNodo(tLista*pl, void* dato, comparar cmp){
+
+    tNodo* elim;
+    int comp;
+
+    while(*pl && (comp=cmp((*pl)->info,dato))!=0)
+        pl = &(*pl)->sig;
+
+    if(!*pl)
+        return NO_ENCONTRADO;
+
+    elim = *pl;
+    *pl = elim->sig;
+    free(elim->info);
+    free(elim);
+
+    return TODO_OK;
+}
+
+void mapear(tLista* pl, accion acc){
+    while(*pl){
+        acc( (*pl)->info );
+        pl = &(*pl)->sig;
+    }
+}
+
+void vaciarLista(tLista* pl){
+
+    tNodo* elim;
+    while(*pl){
+        elim = *pl;
+        *pl = elim->sig;
         free(elim->info);
         free(elim);
     }
+    *pl = NULL;
 }
-int listaVacia(const tLista*pl)
-{
-    return *pl==NULL;
-}
-int listaLlena(const tLista*pl)
-{
-    return 0;
-}
-int inserPrimSinDupli(tLista*pl,const void*info,size_t tamInfo,comparar comp)
-{
-    tNodo*nue;
-    tNodo**prim=pl;
-    int result=1;
 
-    while( *pl!=NULL && (result=comp((*pl)->info,info)) )
-        pl=&(*pl)->sig;
+void ordenarLista(tLista* pl, comparar cmp){
 
-    if(result==0)
-        return DUPLICADO;
+    tNodo** pMenor;
+    tNodo* menor;
 
-    nue=malloc(sizeof(tNodo));
-    if( nue==NULL || (nue->info=malloc(tamInfo))==NULL )
-    {
-        free(nue);
-        return SIN_MEMORIA;
-    }
-    memcpy(nue->info,info,tamInfo);
-    nue->sig=*prim;
-    *prim=nue;
-    nue->tam=tamInfo;
-    return TODO_OK;
-}
-void recorrerIzqDer(const tLista*pl,imprimir imp)
-{
-    while(*pl!=NULL)
-    {
-        imp((*pl)->info);
-        pl=&(*pl)->sig;
+    while(*pl){
+        pMenor = buscarMenor(pl, cmp);
+        if(menor != *pl){
+            menor = *pMenor;
+            *pMenor = menor->sig;
+            menor->sig = *pl;
+            *pl = menor;
+        }
+        pl = &(*pl)->sig;
     }
 }
-void mapear(const tLista*pl, accion acc)
-{
-    while(*pl!=NULL)
-    {
-        acc((*pl)->info);
-        pl=&(*pl)->sig;
+
+tNodo** buscarMenor(tLista*pl, comparar cmp){
+
+    tNodo** menor = pl;
+    pl = &(*pl)->sig;
+    while(*pl){
+        if( cmp((*pl)->info, (*menor)->info) < 0  )
+            menor = pl;
+        pl = &(*pl)->sig;
     }
+    return menor;
 }
