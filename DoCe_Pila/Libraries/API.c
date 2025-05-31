@@ -39,6 +39,11 @@ int obtenerRankings(){  ///GET
 
     if(curl){
         if(obtenerConfigApi(&apiConfig,ARCHIVO_CONFIG) == TODO_OK){
+
+            ///Agregamos el codigo de grupo a la url para consultar el endpoint pertinente
+            strcat(apiConfig.url,"/");
+            strcat(apiConfig.url,apiConfig.codigoGrupo);
+
             curl_easy_setopt(curl,CURLOPT_SSL_VERIFYPEER,0);
             curl_easy_setopt(curl, CURLOPT_URL,apiConfig.url);
             curl_easy_setopt(curl,CURLOPT_FOLLOWLOCATION,1L);
@@ -59,13 +64,7 @@ int guardarRanking(char* nombreJugador, unsigned vencedor){
     CURLcode res;
     struct curl_slist *headers = NULL;
 
-    char linea[1024];
-    FILE*fp = fopen("request.txt","rt"); ///test
-    if(!fp)
-        return ERR_ARCH;
-
-    fgets(linea,100,fp);
-
+    char request[1024] = "";
 
     curl = curl_easy_init();
     if(curl){
@@ -73,13 +72,19 @@ int guardarRanking(char* nombreJugador, unsigned vencedor){
 
             curl_easy_setopt(curl,CURLOPT_SSL_VERIFYPEER,0);
 
+            ///Seteamos los headers de la request para que el contenido sea reconocido como JSON
             headers = curl_slist_append(headers, "Content-Type: application/json");
             curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
-            curl_easy_setopt(curl, CURLOPT_URL, "https://algoritmos-api.azurewebsites.net/api/doce");
+            ///seteamos la url de la api
+            curl_easy_setopt(curl, CURLOPT_URL, apiConfig.url);
 
+            ///le damos a los datos el formato de la request
+            darFormatoARequest(request,nombreJugador,apiConfig.codigoGrupo,vencedor);
+
+            ///Hacemos el POST
             curl_easy_setopt(curl,CURLOPT_CUSTOMREQUEST,"POST");
-            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"CodigoGrupo\":\"apilar\",\"jugador\":{\"nombre\":\"Juan\",\"vencedor\":1}}");
+            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, request);
             res =  curl_easy_perform(curl);
             if(res != CURLE_OK)
                 fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
@@ -89,6 +94,25 @@ int guardarRanking(char* nombreJugador, unsigned vencedor){
     }
     return TODO_OK;
 }  ///POST
+
+char* darFormatoARequest(char *body, char* nombreJugador, char* codigoGrupo, unsigned vencedor){
+
+    //FORMATO tried and tested: "{\"CodigoGrupo\":\"apilar\",\"jugador\":{\"nombre\":\"Juan\",\"vencedor\":1}}"
+    strcat(body,"{\"CodigoGrupo\":\"");
+    strcat(body, codigoGrupo);
+    strcat(body,"\",\"jugador\":{\"nombre\":\"");
+    strcat(body, nombreJugador);
+    strcat(body, "\",\"vencedor\":");
+    switch(vencedor){
+        case 0:
+            strcat(body,"0}}");
+            break;
+        case 1:
+            strcat(body,"1}}");
+    }
+    puts(body);
+    return body;
+}
 
 /*
 {

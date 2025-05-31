@@ -158,7 +158,7 @@
 1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748646730 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
+1748712396 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
 	<stdio.h>
 	<stdlib.h>
 	"curl/include/curl/curl.h"
@@ -217,7 +217,7 @@
 
 1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748648996 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
+1748712428 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
 	"API.h"
 
 1746588688 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cjson\cjson.h

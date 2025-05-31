@@ -21,5 +21,6 @@ typedef struct{
 int obtenerConfigApi(tApiConfig *apiConfig, char* nomArchConfig);
 int obtenerRankings(); ///GET
 int guardarRanking(char* nombreJugador, unsigned vencedor);  ///POST
+char* darFormatoARequest(char *body, char* nombreJugador, char* codigoGrupo, unsigned vencedor);
 
 #endif // API_H_INCLUDED

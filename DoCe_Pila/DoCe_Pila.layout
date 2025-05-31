@@ -2,9 +2,27 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Libraries\DoCe.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\utilidades.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="203" topLine="0" />
+			<Cursor1 position="359" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Libraries\DoCe.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="400" topLine="3" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+		</Folding>
+	</File>
+	<File name="Libraries\API.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="Libraries\mazo.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="591" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Libraries\carta.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -18,29 +36,44 @@
 			<Collapse line="34" />
 		</Folding>
 	</File>
-	<File name="Libraries\utilidades.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\jugador.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="256" topLine="0" />
+			<Cursor1 position="635" topLine="0" />
 		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="21" />
+		</Folding>
 	</File>
-	<File name="Libraries\mazo.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\jugador.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="591" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="202" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Libraries\API.c" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="146" topLine="0" />
+			<Cursor1 position="221" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Libraries\pila.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="162" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Libraries\carta.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="452" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="11" />
+			<Collapse line="21" />
+			<Collapse line="25" />
+		</Folding>
+	</File>
+	<File name="Libraries\DoCe.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="203" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="364" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="Libraries\pila.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -57,11 +90,6 @@
 			<Collapse line="47" />
 		</Folding>
 	</File>
-	<File name="Libraries\jugador.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="221" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="Libraries\mazo.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1875" topLine="12" />
@@ -70,33 +98,9 @@
 			<Collapse line="3" />
 		</Folding>
 	</File>
-	<File name="Libraries\jugador.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Libraries\API.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="635" topLine="0" />
+			<Cursor1 position="2587" topLine="66" />
 		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="21" />
-		</Folding>
-	</File>
-	<File name="Libraries\DoCe.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19" topLine="54" />
-		</Cursor>
-		<Folding>
-			<Collapse line="2" />
-			<Collapse line="22" />
-		</Folding>
-	</File>
-	<File name="Libraries\carta.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="452" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="2" />
-			<Collapse line="11" />
-			<Collapse line="21" />
-			<Collapse line="25" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>

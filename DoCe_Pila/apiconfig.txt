@@ -1,1 +1,1 @@
-https://algoritmos-api.azurewebsites.net/api/doce/apilar | apilar
+https://algoritmos-api.azurewebsites.net/api/doce | apilar
