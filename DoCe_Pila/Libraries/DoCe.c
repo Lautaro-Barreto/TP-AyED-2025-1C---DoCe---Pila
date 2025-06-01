@@ -126,13 +126,14 @@ void partida(unsigned turnoDe,tJugador*humano,
     tMazo*temporal;
     eEfecto ultDescar=REPETIR_TURNO;
     int ultValDesc=0;
-    tJugador*jugadorAct;//para facilitar las operaciones con el mazo
+    tJugador*jugadorAct,*rival;//para facilitar las operaciones con el mazo
 
     while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
     {
         if( turnoDe==JUGADOR )
         {
             jugadorAct=humano;
+            rival=maquina;
             do
             {
                 mostrarJugador(humano,mostrarCarta);
@@ -144,10 +145,12 @@ void partida(unsigned turnoDe,tJugador*humano,
         else
         {
             jugadorAct=maquina;
+            rival=humano;
 //            seleccionCartaIA()
             indice=0;
         }
-//        aplicarEfecto
+        aplicarEfecto(jugadorAct->mano[indice].codigo,jugadorAct->mano[indice].valor,
+                      ultValDesc,&jugadorAct->puntaje,&rival->puntaje,&turnoDe);
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
         ultDescar=jugadorAct->mano[indice].codigo;
         ultValDesc=jugadorAct->mano[indice].valor;
