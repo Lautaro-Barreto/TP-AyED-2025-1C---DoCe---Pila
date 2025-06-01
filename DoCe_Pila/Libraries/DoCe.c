@@ -95,6 +95,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     while( entrada!=CONFIRMAR && entrada!=CANCELAR )
     {
+        printf("Eleccion: ");
         scanf("%d",&entrada);
         while( getchar()!='\n' );
 
@@ -110,13 +111,12 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,
     {
     case MAS_DOS:
     case MAS_UNO:
-        if( (*puntJug+=valorCarta) > 0 )
-            *puntJug=PUNTAJE_GANADOR;
+        *puntJug+=valorCarta;
         break;
     case MENOS_UNO:
     case MENOS_DOS:
-        if( (*puntRival+=valorCarta) < 0 )
-            *puntJug=0;
+        if( *puntRival+=valorCarta >= 0 )
+            *puntRival+=valorCarta;
         break;
     case ESPEJO:
         *puntJug=-valorCartaRival;
