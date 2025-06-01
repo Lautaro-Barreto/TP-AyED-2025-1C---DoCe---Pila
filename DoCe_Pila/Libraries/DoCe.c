@@ -115,7 +115,7 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,
         break;
     case MENOS_UNO:
     case MENOS_DOS:
-        if( *puntRival+=valorCarta >= 0 )
+        if( *puntRival+valorCarta >= 0 )
             *puntRival+=valorCarta;
         break;
     case ESPEJO:
