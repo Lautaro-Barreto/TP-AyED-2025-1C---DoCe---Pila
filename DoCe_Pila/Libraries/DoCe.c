@@ -84,7 +84,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
     {
         printf("Seguro que quieres jugar esa carta?\n"
                "El puntaje de tu rival es %d (Si=1 No=0)",puntajeIA);
-        entrada=-1;//¿Numeritos magico?
+        entrada=-1;//Â¿Numeritos magico?
     }
 
     if( elegida->codigo==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
@@ -134,7 +134,7 @@ void partida(unsigned turnoDe,tJugador*humano,
     int verificar;
     tMazo*temporal;
     eEfecto ultDescar=REPETIR_TURNO;
-    int ultValDesc=0;
+    int ultValDesc=0, humanoGano;
     tJugador*jugadorAct,*rival;//para facilitar las operaciones con el mazo
 
     while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
@@ -164,7 +164,7 @@ void partida(unsigned turnoDe,tJugador*humano,
         ultDescar=jugadorAct->mano[indice].codigo;
         ultValDesc=jugadorAct->mano[indice].valor;
 
-        if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!=TODO_OK )
+        if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!= TODO_OK )
         {
             mezclarMazo(descarte);
             temporal=principal;
@@ -174,6 +174,11 @@ void partida(unsigned turnoDe,tJugador*humano,
         }
         turnoDe=!turnoDe;
     }
+    if(humano->puntaje<PUNTAJE_GANADOR)
+        humanoGano = 0;
+    else
+        humanoGano = 1;
+    guardarRanking(humano->nombre,humanoGano);
 }
 
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
@@ -190,4 +195,3 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
 //int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
 //}
 //
-///completar: guardarResultado() y verRanking() (la parte de conexión con la API)

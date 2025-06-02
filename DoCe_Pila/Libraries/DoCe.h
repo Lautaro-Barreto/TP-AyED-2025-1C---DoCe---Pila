@@ -9,6 +9,7 @@
 #include"carta.h"
 #include"jugador.h"
 #include"mazo.h"
+#include"API.h"
 #include"math.h"
 
 #define GANO 6
