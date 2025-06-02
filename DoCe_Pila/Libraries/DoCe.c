@@ -119,8 +119,11 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,
             *puntRival+=valorCarta;
         break;
     case ESPEJO:
-        *puntJug=-valorCartaRival;
-        *puntRival=+valorCartaRival;
+        if( valorCartaRival<0 )
+        {
+            *puntJug=-valorCartaRival;
+            *puntRival=+valorCartaRival;
+        }
         break;
     case REPETIR_TURNO:
         *turnoDe=!*turnoDe;
