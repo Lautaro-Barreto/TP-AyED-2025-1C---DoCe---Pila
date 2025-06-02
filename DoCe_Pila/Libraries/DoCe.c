@@ -183,4 +183,3 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
 //int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
 //}
 //
-///completar: guardarResultado() y verRanking() (la parte de conexión con la API)

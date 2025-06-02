@@ -139,7 +139,7 @@
 	<string.h>
 	"utilidades.h"
 
-1748722284 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748725770 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
@@ -218,7 +218,7 @@
 
 1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748723571 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
+1748725770 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
 	"API.h"
 
 1746588688 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cjson\cjson.h
