@@ -84,7 +84,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
     {
         printf("Seguro que quieres jugar esa carta?\n"
                "El puntaje de tu rival es %d (Si=1 No=0)",puntajeIA);
-        entrada=-1;//¿Numeritos magico?
+        entrada=-1;//Â¿Numeritos magico?
     }
 
     if( elegida->codigo==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
@@ -95,6 +95,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     while( entrada!=CONFIRMAR && entrada!=CANCELAR )
     {
+        printf("Eleccion: ");
         scanf("%d",&entrada);
         while( getchar()!='\n' );
 
@@ -105,17 +106,25 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
     return entrada;
 }
 void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,int*puntRival,unsigned*turnoDe)
-{//¿por qué no usaste un swithc? Porque pensaba en la posibilidad
-    if( valorCarta>0 )//de que puedan agregarse cartas +n/-n. Pero si quieren cambiarlo haganlo
-        *puntJug+=valorCarta;
-    if( valorCarta<0 && (*puntRival=+valorCarta)<0 )
-        *puntRival=0;
-    if( carta==REPETIR_TURNO )
-        *turnoDe=!*turnoDe;
-    if( valorCartaRival<0 )
+{
+    switch(carta)
     {
+    case MAS_DOS:
+    case MAS_UNO:
+        *puntJug+=valorCarta;
+        break;
+    case MENOS_UNO:
+    case MENOS_DOS:
+        if( *puntRival+valorCarta >= 0 )
+            *puntRival+=valorCarta;
+        break;
+    case ESPEJO:
         *puntJug=-valorCartaRival;
         *puntRival=+valorCartaRival;
+        break;
+    case REPETIR_TURNO:
+        *turnoDe=!*turnoDe;
+        break;
     }
 }
 void partida(unsigned turnoDe,tJugador*humano,
@@ -126,13 +135,14 @@ void partida(unsigned turnoDe,tJugador*humano,
     tMazo*temporal;
     eEfecto ultDescar=REPETIR_TURNO;
     int ultValDesc=0, humanoGano;
-    tJugador*jugadorAct;//para facilitar las operaciones con el mazo
+    tJugador*jugadorAct,*rival;//para facilitar las operaciones con el mazo
 
     while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
     {
         if( turnoDe==JUGADOR )
         {
             jugadorAct=humano;
+            rival=maquina;
             do
             {
                 mostrarJugador(humano,mostrarCarta);
@@ -144,10 +154,12 @@ void partida(unsigned turnoDe,tJugador*humano,
         else
         {
             jugadorAct=maquina;
+            rival=humano;
 //            seleccionCartaIA()
             indice=0;
         }
-//        aplicarEfecto
+        aplicarEfecto(jugadorAct->mano[indice].codigo,jugadorAct->mano[indice].valor,
+                      ultValDesc,&jugadorAct->puntaje,&rival->puntaje,&turnoDe);
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
         ultDescar=jugadorAct->mano[indice].codigo;
         ultValDesc=jugadorAct->mano[indice].valor;

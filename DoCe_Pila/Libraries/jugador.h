@@ -10,7 +10,7 @@
 typedef struct{
     char nombre[TAM_NOM_JUG];
     tCarta mano[TAM_MANO];
-    unsigned puntaje;
+    int puntaje;
 }tJugador;
 
 typedef void(fMost)(const void*);
