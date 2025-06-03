@@ -5,10 +5,11 @@ algoritmo elegirMaq(int dificultad)
     switch(dificultad)
     {
     case(FACIL):
-    case(DIFICIL):
             return jugarFacil;
     case(MEDIO):
             return jugarMedio;
+    case(DIFICIL):
+            return jugarDificil;
     default:
         return jugarFacil;
     }
@@ -31,12 +32,27 @@ int jugarMedio(tJugador*maquina,int*puntHum,int ultCart)
     else
         return rand()%TAM_MANO;
 }
-//int jugarDificil(tJugador*maquina,int*puntHum,int valUltCart)
-//{
-//    int indMano;
-//
-//    if( maquina->puntaje>=PUNTAJE_GANADOR &&  )
-//}
+int jugarDificil(tJugador*maquina,int*puntHum,int ultCart)
+{
+    int indMano,cartBuenas;
+
+    if( ultCart<0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO )
+        return indMano;
+
+    if( *puntHum>=CERCA_DE_GANAR && ( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO ||
+       (indMano=buscarPor(maquina->mano,esRepTur,NULL))<TAM_MANO ) )
+        return indMano;
+
+    if( ((cartBuenas=contar(maquina->mano,esCartaBuena))>1 &&
+       (indMano=buscarPor(maquina->mano,esRepTur,NULL))<TAM_MANO) ||
+       (indMano=buscarPor(maquina->mano,esMas,NULL))<TAM_MANO )
+       return indMano;
+
+    if( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO )
+        return indMano;
+    else
+        return rand()%TAM_MANO;
+}
 int buscarPor(tCarta*mano,condicion cond,const void*param)
 {
     int i;
@@ -74,4 +90,11 @@ int noEsEspe(const tCarta*p,const void*param)
 int valMayorIgual(const tCarta*p,const void* param)
 {
     return p->valor>=*(int*)param;
+}
+int contar(const tCarta*carta,condicion cond)
+{
+    int i;
+    for(i=0;i<TAM_MANO;i++)
+        i+=cond(carta+i,NULL);
+    return i;
 }

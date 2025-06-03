@@ -144,7 +144,7 @@ void partida(unsigned turnoDe,tJugador*humano,
     eEfecto ultDescar=REPETIR_TURNO;
     tCola historial;
     tTurno turnoActual;
-    tJugador*jugadorAct,*rival;//para facilitar las operaciones con el mazo
+    tJugador*jugadorAct,*rival;
 
     crearCola(&historial);
     system("cls");

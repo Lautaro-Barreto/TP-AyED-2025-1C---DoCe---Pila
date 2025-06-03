@@ -41,36 +41,36 @@
 	<stdlib.h>
 	"Libraries/DoCe.h"
 
-1747592466 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c
+1748971421 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c
 	"cola.h"
 
-1747592466 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.h
+1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.h
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1748887529 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1748963585 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748971460 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748922755 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
-	"pila.h"
 	"carta.h"
 	"jugador.h"
 	"mazo.h"
 	"API.h"
 	"math.h"
 	"maquina.h"
+	"cola.h"
 
 1748109272 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.h
 	<string.h>
 	"utilidades.h"
 
-1748887529 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
+1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -82,7 +82,7 @@
 1748109272 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
 
-1748923090 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748971421 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
@@ -94,13 +94,13 @@
 	<stdlib.h>
 	<stdio.h>
 
-1748278063 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
+1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
 	"carta.h"
 	<string.h>
 	<time.h>
 	"utilidades.h"
 
-1748305434 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
+1748971421 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
 	"mazo.h"
 
 1748920579 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h
@@ -300,10 +300,10 @@
 
 1748887529 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748969571 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.c
+1748974570 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.c
 	"maquina.h"
 
-1748969548 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
+1748973387 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
 	"jugador.h"
 
 1748962482 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c

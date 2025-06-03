@@ -24,5 +24,6 @@ int esCartaBuena(const tCarta*,const void*);
 int esRepTur(const tCarta*,const void*);
 int noEsEspe(const tCarta*,const void*);
 int valMayorIgual(const tCarta*p,const void* param);
+int contar(const tCarta*,condicion);
 
 #endif // MAQUINA_H_INCLUDED
