@@ -96,7 +96,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
         entrada=-1;//¿Numeritos magico?
     }
 
-    if( elegida->codigo==ESPEJO && (ultCartIA!=MENOS_DOS || ultCartIA!=MENOS_UNO) )
+    if( elegida->codigo==ESPEJO && ultCartIA!=MENOS_DOS && ultCartIA!=MENOS_UNO )
     {
         printf("Seguro que quieres descargar la carta espejo? Si=1 No=0\n");
         entrada=-1;
@@ -130,9 +130,9 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,
     case ESPEJO:
         if( valorCartaRival<0 )
         {
-            *puntJug=-valorCartaRival;
+            *puntJug-=valorCartaRival;
             if( *puntRival+valorCartaRival >= 0 )
-                *puntRival=+valorCartaRival;
+                *puntRival-=valorCartaRival;
         }
         break;
     case REPETIR_TURNO:
