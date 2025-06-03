@@ -25,7 +25,10 @@ void jugar(){
     tMazo mazoActivo,mazoDesc;
     algoritmo alg;
 
+    crearJugador(&humano);
+    crearJugador(&maquina);
     ingresarNombre(humano.nombre,TAM_NOM_JUG);
+    strcpy(maquina.nombre,"IA");
 
     alg=elegirMaq( ingresarDificultad() );
 
@@ -35,9 +38,6 @@ void jugar(){
     llenarMazo(&mazoActivo);
     mezclarMazo(&mazoActivo);
     repartirCartas(&mazoActivo,&humano,&maquina);
-
-    humano.puntaje=maquina.puntaje=0;
-    strcpy(maquina.nombre,"IA");
 
     partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, alg);
 }
@@ -79,18 +79,18 @@ int elegirCarta ()
     return opc;
 }
 
-int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al jugador que su jugada
-{                                                                            //puede no tener el efecto deseado
+int evaluarEleccion(tCarta* elegida,int puntPerd,int puntajeIA)
+{
     int entrada=CONFIRMAR;
 
-    if( (elegida->codigo==MENOS_DOS || elegida->codigo==MENOS_UNO) && puntajeIA<abs(elegida->valor) )
+    if( elegida->valor<0 && puntajeIA<(-elegida->valor) )
     {
         printf("Seguro que quieres jugar esa carta?\n"
                "El puntaje de tu rival es %d (Si=1 No=0)",puntajeIA);
         entrada=-1;//¿Numeritos magico?
     }
 
-    if( elegida->codigo==ESPEJO && ultCartIA!=MENOS_DOS && ultCartIA!=MENOS_UNO )
+    if( elegida->codigo==ESPEJO && puntPerd==0 )
     {
         printf("Seguro que quieres descargar la carta espejo? Si=1 No=0\n");
         entrada=-1;
@@ -109,26 +109,37 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
     return entrada;
 }
 
-void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,unsigned*turnoDe)
+void aplicarEfecto(tJugador* act,int indice,tJugador*rival,unsigned*turnoDe)
 {
+    tCarta*elegida=&act->mano[indice];
+
     switch(elegida->codigo)
     {
     case MAS_DOS:
     case MAS_UNO:
-        *puntJug+=elegida->valor;
+        act->puntaje+=elegida->valor;
+//        *puntJug+=elegida->valor;
         break;
     case MENOS_UNO:
     case MENOS_DOS:
-            if( (*puntRival+=elegida->valor)<0 )
-                *puntRival=0;
+        rival->puntPerdidos=MINIMO(rival->puntaje,-elegida->valor);
+        rival->puntaje-=rival->puntPerdidos;
+//            if( (*puntRival+=elegida->valor)<0 )
+//                *puntRival=0;
         break;
     case ESPEJO:
-        if( valorUltCar<0 )
+        if( act->puntPerdidos>0 )
         {
-            *puntJug-=valorUltCar;
-            if( (*puntRival+=valorUltCar) < 0 )
-                *puntRival=0;
+            act->puntaje+=act->puntPerdidos;
+            rival->puntPerdidos=MINIMO(rival->puntaje,act->puntPerdidos);
+            rival->puntaje-=rival->puntPerdidos;
         }
+//        if( valorUltCar<0 )
+//        {
+//            *puntJug-=valorUltCar;
+//            if( (*puntRival+=valorUltCar) < 0 )
+//                *puntRival=0;
+//        }
         break;
     case REPETIR_TURNO:
         *turnoDe=!*turnoDe;
@@ -140,9 +151,8 @@ void partida(unsigned turnoDe,tJugador*humano,
              tJugador*maquina,tMazo*principal,tMazo*descarte,algoritmo selecCarta)
 {
     unsigned tamCart=sizeof(tCarta), indice, puntosAntes=0;
-    int verificar, ultValDesc=0, humanoGano;
+    int verificar, humanoGano;
     tMazo*temporal;
-    eEfecto ultDescar=REPETIR_TURNO;
     tCola historial;
     tTurno turnoActual;
     tJugador*jugadorAct,*rival;
@@ -160,23 +170,20 @@ void partida(unsigned turnoDe,tJugador*humano,
             {
                 mostrarMano(humano,mostrarCarta);
                 indice=elegirCarta();
-                verificar=evaluarEleccion(&humano->mano[indice], maquina->puntaje,
-                                ultDescar);
+                verificar=evaluarEleccion(&humano->mano[indice], humano->puntPerdidos, maquina->puntaje);
             }while( verificar!=CONFIRMAR );
         }
         else
         {
             jugadorAct=maquina;
             rival=humano;
-            indice=selecCarta(maquina,&humano->puntaje,ultValDesc);
+            indice=selecCarta(maquina,humano->puntaje);
             printf("\n\t-Turno de la Maquina-\n\nLa Maquina juega un: %s\n\n",maquina->mano[indice].descrip);
         }
         puntosAntes = jugadorAct->puntaje;
-        aplicarEfecto(&jugadorAct->mano[indice],&jugadorAct->puntaje,ultValDesc,&rival->puntaje,&turnoDe);
+        aplicarEfecto(jugadorAct,indice,rival,&turnoDe);
         mostrarEstPart(humano,maquina);
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
-        ultDescar=jugadorAct->mano[indice].codigo;
-        ultValDesc=jugadorAct->mano[indice].valor;
 
         if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!= TODO_OK )
         {

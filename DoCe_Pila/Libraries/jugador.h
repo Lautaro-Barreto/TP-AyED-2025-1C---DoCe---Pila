@@ -11,11 +11,13 @@ typedef struct{
     char nombre[TAM_NOM_JUG];
     tCarta mano[TAM_MANO];
     int puntaje;
+    unsigned puntPerdidos;
 }tJugador;
 
 typedef void(fMost)(const void*);
 
 void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
 void mostrarMano(const tJugador* jugador,fMost imprimirCarta);
+void crearJugador(tJugador*);
 
 #endif // JUGADOR_H_INCLUDED
