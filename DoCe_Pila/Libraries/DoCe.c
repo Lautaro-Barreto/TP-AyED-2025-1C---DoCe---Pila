@@ -133,6 +133,7 @@ void aplicarEfecto(tJugador* act,int indice,tJugador*rival,unsigned*turnoDe)
             act->puntaje+=act->puntPerdidos;
             rival->puntPerdidos=MINIMO(rival->puntaje,act->puntPerdidos);
             rival->puntaje-=rival->puntPerdidos;
+            act->puntPerdidos=0;
         }
 //        if( valorUltCar<0 )
 //        {
