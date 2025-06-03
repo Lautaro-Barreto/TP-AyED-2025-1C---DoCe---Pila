@@ -21,13 +21,22 @@ int menu(){
 }
 
 void jugar(){
-    unsigned dificultad;//Con esta variable determinamos que IA juega (Facil/medio/dificil) o eso tengo pensado
+    unsigned dificultad;
     tJugador humano,maquina;
     tMazo mazoActivo,mazoDesc;
+    algoritmo jugar;
 
     ingresarNombre(humano.nombre,TAM_NOM_JUG);
 
     dificultad=ingresarDificultad();
+    switch(dificultad)
+    {
+    case(FACIL):
+    case(MEDIO):
+    case(DIFICIL):
+            jugar=jugarFacil;
+        break;
+    }
 
     crearMazo(&mazoActivo);
     crearMazo(&mazoDesc);
@@ -38,7 +47,7 @@ void jugar(){
 
     humano.puntaje=maquina.puntaje=0;
 
-    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc);//tenemos que agregar a la IA
+    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, jugar);//tenemos que agregar a la IA
 }
 
 int ingresarDificultad ()
@@ -132,7 +141,7 @@ void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,
     }
 }
 void partida(unsigned turnoDe,tJugador*humano,
-             tJugador*maquina,tMazo*principal,tMazo*descarte)
+             tJugador*maquina,tMazo*principal,tMazo*descarte,algoritmo selecCarta)
 {
     unsigned tamCart=sizeof(tCarta), indice;
     int verificar;
@@ -159,8 +168,7 @@ void partida(unsigned turnoDe,tJugador*humano,
         {
             jugadorAct=maquina;
             rival=humano;
-//            seleccionCartaIA()
-            indice=0;
+            indice=selecCarta(maquina,&humano->puntaje,ultValDesc);
         }
         aplicarEfecto(jugadorAct->mano[indice].codigo,jugadorAct->mano[indice].valor,
                       ultValDesc,&jugadorAct->puntaje,&rival->puntaje,&turnoDe);

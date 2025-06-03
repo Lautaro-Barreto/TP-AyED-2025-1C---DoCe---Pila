@@ -11,6 +11,7 @@
 #include"mazo.h"
 #include"API.h"
 #include"math.h"
+#include"maquina.h"
 
 #define GANO 6
 #define SIGUE 7
@@ -34,7 +35,7 @@ int menu();
 void jugar();
 int ingresarDificultad ();
 void partida(unsigned turnoDe, tJugador*jugador,
-             tJugador*maquina, tMazo*principal, tMazo*descar);
+             tJugador*maquina, tMazo*principal, tMazo*descar,algoritmo jugar);
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 int elegirCarta ();
 int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA);
