@@ -21,22 +21,13 @@ int menu(){
 }
 
 void jugar(){
-    unsigned dificultad;
     tJugador humano,maquina;
     tMazo mazoActivo,mazoDesc;
-    algoritmo jugar;
+    algoritmo alg;
 
     ingresarNombre(humano.nombre,TAM_NOM_JUG);
 
-    dificultad=ingresarDificultad();
-    switch(dificultad)
-    {
-    case(FACIL):
-    case(MEDIO):
-    case(DIFICIL):
-            jugar=jugarFacil;
-        break;
-    }
+    alg=elegirMaq( ingresarDificultad() );
 
     crearMazo(&mazoActivo);
     crearMazo(&mazoDesc);
@@ -47,7 +38,7 @@ void jugar(){
 
     humano.puntaje=maquina.puntaje=0;
 
-    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, jugar);//tenemos que agregar a la IA
+    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, alg);//tenemos que agregar a la IA
 }
 
 int ingresarDificultad ()
@@ -169,6 +160,7 @@ void partida(unsigned turnoDe,tJugador*humano,
             jugadorAct=maquina;
             rival=humano;
             indice=selecCarta(maquina,&humano->puntaje,ultValDesc);
+            printf("\nLa Maquina juega un: %s\n",maquina->mano[indice].descrip);
         }
         aplicarEfecto(jugadorAct->mano[indice].codigo,jugadorAct->mano[indice].valor,
                       ultValDesc,&jugadorAct->puntaje,&rival->puntaje,&turnoDe);

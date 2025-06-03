@@ -55,6 +55,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Libraries/listaSimple.h" />
+		<Unit filename="Libraries/maquina.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Libraries/maquina.h" />
 		<Unit filename="Libraries/mazo.c">
 			<Option compilerVar="CC" />
 		</Unit>
