@@ -5,23 +5,31 @@
 #include<stdio.h>
 #include<ctype.h>
 
-#include"pila.h"
 #include"carta.h"
 #include"jugador.h"
 #include"mazo.h"
 #include"API.h"
 #include"math.h"
 #include"maquina.h"
+#include"cola.h"
 
-#define GANO 6
-#define SIGUE 7
-#define JUGADOR 0
-#define MAQUINA 1
-#define CONFIRMAR 1
-#define CANCELAR 0
+#define GANO            6
+#define SIGUE           7
+#define JUGADOR         0
+#define MAQUINA         1
+#define CONFIRMAR       1
+#define CANCELAR        0
 #define PUNTAJE_GANADOR 12
+#define TAM_NOMARCH     50
 
 /**Por favor, si van a declarar una estructura usen la notación tNombre (ej: tLista, tNodo) así todas se escriben igual**/
+
+typedef struct{
+    tJugador jugador;
+    unsigned esTurnoDe;
+    tCarta ultCartaJugada;
+    unsigned puntosAcumulados;
+}tTurno;
 
 int menu();
 void jugar();
@@ -33,5 +41,6 @@ int elegirCarta ();
 int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA);
 void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,unsigned*turnoDe);
 void mostrarEstPart(tJugador*,tJugador*);
+int generarInforme(tCola* historial);
 
 #endif // DOCE_H_INCLUDED

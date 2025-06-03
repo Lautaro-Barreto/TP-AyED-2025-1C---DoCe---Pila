@@ -4,6 +4,7 @@ void crearMazo(tMazo*p)
 {
     p->cantCartas=0;
 }
+
 int llenarMazo(tMazo*p)
 {
     const tCartaConfig*config=obtenerConfig();
@@ -28,6 +29,7 @@ int llenarMazo(tMazo*p)
     p->cantCartas=tope;
     return TODO_OK;
 }
+
 void mezclarMazo(tMazo*p)
 {
     int indiceRand,indice,tam=sizeof(p->mazo[0]);
@@ -39,6 +41,7 @@ void mezclarMazo(tMazo*p)
             intercambiar(&p->mazo[indice],&p->mazo[indiceRand],tam);
     }
 }
+
 void intercambiar(void*a,void*b,size_t tam)
 {
     char temp[tam];
@@ -47,15 +50,17 @@ void intercambiar(void*a,void*b,size_t tam)
     memcpy(a,b,tam);
     memcpy(b,temp,tam);
 }
+
 int robarCarta(tMazo*p,void*dest,unsigned tam)
 {
     if(p->cantCartas<1)
         return MAZO_VACIO;
 
-    memcpy(dest,&p->mazo[p->cantCartas-1],tam);
+    memcpy(dest,&p->mazo[p->cantCartas-1],MINIMO( tam, sizeof(p->mazo[p->cantCartas-1])) );
     p->cantCartas--;
     return TODO_OK;
 }
+
 int ponerEnMazo(tMazo* mazo, const void* carta,unsigned tam)
 {
     if(mazo->cantCartas >= TAM_MAZO)
@@ -66,6 +71,7 @@ int ponerEnMazo(tMazo* mazo, const void* carta,unsigned tam)
 
     return TODO_OK;
 }
+
 void recorrerMazo(tMazo*p)//FUNCIÓN PARA PRUEBAS
 {
     int ind;
@@ -74,4 +80,12 @@ void recorrerMazo(tMazo*p)//FUNCIÓN PARA PRUEBAS
         mostrarCarta(&p->mazo[ind]);
         putchar('\n');
     }
+}
+
+int verTopeMazo(tMazo*p, void* dest, unsigned tam){
+    if(p->cantCartas<1)
+        return MAZO_VACIO;
+
+    memcpy(dest, &p->mazo[p->cantCartas-1], MINIMO( tam, sizeof(p->mazo[p->cantCartas-1]) ));
+    return TODO_OK;
 }

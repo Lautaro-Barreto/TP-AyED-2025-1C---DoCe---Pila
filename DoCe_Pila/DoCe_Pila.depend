@@ -110,30 +110,30 @@
 1748922292 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
 	"jugador.h"
 
-1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
+1748959469 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
 	"carta.h"
 
-1748541188 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.h
 	<stdlib.h>
 	<stdio.h>
 
-1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
+1748959470 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
 	"jugador.h"
 
-1748541188 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h
+1748959470 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h
 	"carta.h"
 	"string.h"
 
-1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
+1748962622 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
 	"mazo.h"
 
-1748541188 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
+1748962634 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.h
 	"carta.h"
 	<string.h>
 	<time.h>
 	"utilidades.h"
 
-1748722936 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
+1748962426 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
 1748541188 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\pila.c
 	"pila.h"
@@ -142,33 +142,34 @@
 	<string.h>
 	"utilidades.h"
 
-1748725770 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
+1748965952 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Libraries/DoCe.h"
 
-1748544099 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1748969990 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
-	"pila.h"
 	"carta.h"
 	"jugador.h"
 	"mazo.h"
 	"API.h"
 	"math.h"
+	"maquina.h"
+	"cola.h"
 
-1748716914 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1748966040 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748725770 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.h
 	<stdio.h>
 	<stdlib.h>
 	"curl/include/curl/curl.h"
 	"utilidades.h"
 	"listaSimple.h"
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\curl.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\curl.h
 	"curlver.h"
 	"system.h"
 	<stdio.h>
@@ -190,9 +191,9 @@
 	"mprintf.h"
 	"typecheck-gcc.h"
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\curlver.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\curlver.h
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\system.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\system.h
 	<ConditionalMacros.h>
 	<inttypes.h>
 	<inttypes.h>
@@ -200,40 +201,40 @@
 	<sys/socket.h>
 	<sys/poll.h>
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\easy.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\easy.h
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\multi.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\multi.h
 	"curl.h"
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\urlapi.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\urlapi.h
 	"curl.h"
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\options.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\options.h
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\header.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\header.h
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\websockets.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\websockets.h
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\mprintf.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\mprintf.h
 	<stdarg.h>
 	<stdio.h>
 	"curl.h"
 
-1748421710 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
+1748959469 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748725770 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
+1748959469 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
 	"API.h"
 
 1746588688 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cjson\cjson.h
 	<stddef.h>
 
-1748723084 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
+1748962426 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1748724046 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
+1748959470 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\listasimple.c
 	"listaSimple.h"
 
 1748887529 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\api.c
@@ -303,5 +304,19 @@
 	"maquina.h"
 
 1748920127 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
+	"jugador.h"
+
+1748962482 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c
+	"cola.h"
+
+1748962426 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.h
+	<stdlib.h>
+	<string.h>
+	"utilidades.h"
+
+1748959470 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.c
+	"maquina.h"
+
+1748959470 c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
 	"jugador.h"
 

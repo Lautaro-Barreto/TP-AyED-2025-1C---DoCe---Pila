@@ -16,12 +16,6 @@
 #define LISTA_VACIA     3
 #define DUPLICADO       5
 
-typedef struct sNodo{
-    void* info;
-    unsigned tamInfo;
-    struct sNodo* sig;
-}tNodo;
-
 typedef tNodo* tLista;
 typedef void (*accion)(const void*);
 typedef int (*comparar)(const void*,const void*);

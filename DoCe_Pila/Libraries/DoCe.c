@@ -37,8 +37,9 @@ void jugar(){
     repartirCartas(&mazoActivo,&humano,&maquina);
 
     humano.puntaje=maquina.puntaje=0;
+    strcpy(maquina.nombre,"IA");
 
-    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, alg);//tenemos que agregar a la IA
+    partida(rand()%2, &humano, &maquina, &mazoActivo, &mazoDesc, alg);
 }
 
 int ingresarDificultad ()
@@ -76,6 +77,7 @@ int elegirCarta ()
     while(opc<0 || opc>2);
     return opc;
 }
+
 int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al jugador que su jugada
 {                                                                            //puede no tener el efecto deseado
     int entrada=CONFIRMAR;
@@ -105,6 +107,7 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     return entrada;
 }
+
 void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,unsigned*turnoDe)
 {
     switch(elegida->codigo)
@@ -131,16 +134,21 @@ void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,uns
         break;
     }
 }
+
 void partida(unsigned turnoDe,tJugador*humano,
              tJugador*maquina,tMazo*principal,tMazo*descarte,algoritmo selecCarta)
 {
-    unsigned tamCart=sizeof(tCarta), indice;
-    int verificar;
+    unsigned tamCart=sizeof(tCarta), indice, puntosAntes=0;
+    int verificar, ultValDesc=0, humanoGano;
     tMazo*temporal;
     eEfecto ultDescar=REPETIR_TURNO;
-    int ultValDesc=0, humanoGano;
+    tCola historial;
+    tTurno turnoActual;
     tJugador*jugadorAct,*rival;//para facilitar las operaciones con el mazo
 
+    crearCola(&historial);
+    system("cls");
+    mostrarEstPart(humano,maquina);
     while( humano->puntaje<PUNTAJE_GANADOR && maquina->puntaje<PUNTAJE_GANADOR )
     {
         if( turnoDe==JUGADOR )
@@ -162,6 +170,7 @@ void partida(unsigned turnoDe,tJugador*humano,
             indice=selecCarta(maquina,&humano->puntaje,ultValDesc);
             printf("\n\t-Turno de la Maquina-\n\nLa Maquina juega un: %s\n\n",maquina->mano[indice].descrip);
         }
+        puntosAntes = jugadorAct->puntaje;
         aplicarEfecto(&jugadorAct->mano[indice],&jugadorAct->puntaje,ultValDesc,&rival->puntaje,&turnoDe);
         mostrarEstPart(humano,maquina);
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
@@ -176,12 +185,26 @@ void partida(unsigned turnoDe,tJugador*humano,
             descarte=temporal;
             robarCarta(principal, &jugadorAct->mano[indice], tamCart);
         }
+        turnoActual.jugador = *jugadorAct;
+        turnoActual.esTurnoDe = turnoDe;
+        turnoActual.puntosAcumulados = jugadorAct->puntaje - puntosAntes;
+        verTopeMazo(descarte,&turnoActual.ultCartaJugada,tamCart);
+        ponerEnCola(&historial,&turnoActual,sizeof(tTurno));
         turnoDe=!turnoDe;
     }
-    if(humano->puntaje<PUNTAJE_GANADOR)
+    if(humano->puntaje<PUNTAJE_GANADOR){
         humanoGano = 0;
-    else
-        humanoGano = 1;
+        printf("\nGANADOR: La IA");
+    }
+
+    else{
+         humanoGano = 1;
+         printf("\nGANADOR: %s",humano->nombre);
+    }
+
+    if(generarInforme(&historial)!=TODO_OK)
+        puts("\nError al generar el informe.\n");
+    vaciarCola(&historial);
     guardarRanking(humano->nombre,humanoGano);
 }
 
@@ -199,4 +222,46 @@ void mostrarEstPart(tJugador*hum,tJugador*maq)
 {
     printf("\nJugador: %s\tPuntaje:%d\nJugador: %s\tPuntaje:%d\n\n"
            ,hum->nombre,hum->puntaje,maq->nombre,maq->puntaje);
+}
+
+int generarInforme(tCola* historial){
+
+    char nomArch[TAM_NOMARCH] = "informe-juego_", aux[TAM_NOMARCH];
+    time_t t = time(0);
+    struct tm fechaYHora = *localtime(&t);
+    tTurno turno;
+    int i = 1;
+
+    ///Le damos el formato de la fecha y hora actual al nombre del archivo
+    sprintf(aux,"%d",fechaYHora.tm_year + 1900);
+    strcat(nomArch,aux);
+    strcat(nomArch,"-"); ///Año
+    sprintf(aux,"%d",fechaYHora.tm_mon);
+    strcat(nomArch,aux);
+    strcat(nomArch,"-"); ///Mes
+    sprintf(aux,"%d",fechaYHora.tm_mday);
+    strcat(nomArch,aux);
+    strcat(nomArch,"-"); //Dia
+    sprintf(aux,"%d",fechaYHora.tm_hour);
+    strcat(nomArch,aux);
+    strcat(nomArch,"-"); //Hora
+    sprintf(aux,"%d",fechaYHora.tm_min);
+    strcat(nomArch,aux);
+    strcat(nomArch,".txt"); //Minuto
+
+
+    FILE*archInforme = fopen(nomArch,"wt");
+    if(!archInforme)
+        return ERR_ARCH;
+
+    while(historial->pri){
+        sacarDeCola(historial,&turno,sizeof(tTurno));
+        fprintf(archInforme,"Turno %d:\n%s jugó \"%s\" y acumuló %d puntos\n\n",i,turno.jugador.nombre,turno.ultCartaJugada.descrip,turno.puntosAcumulados);
+        i++;
+    }
+
+    fprintf(archInforme,"\nGANADOR: %s\n",turno.jugador.nombre);
+
+    fclose(archInforme);
+    return TODO_OK;
 }

@@ -8,7 +8,6 @@
 #define TAM_COLA        30
 #define COLA_LLENA      1
 #define COLA_VACIA      2
-#define SIN_MEM         4
 
 typedef struct{
     tNodo* pri;

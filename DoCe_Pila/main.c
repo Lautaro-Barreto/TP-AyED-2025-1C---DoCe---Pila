@@ -15,6 +15,8 @@ int main()
         case 'A':
             puts("Elegiste JUGAR");
             jugar();
+            system("pause");
+            system("cls");
             break;
         case 'B':
             puts("Elegiste VER RANKING");

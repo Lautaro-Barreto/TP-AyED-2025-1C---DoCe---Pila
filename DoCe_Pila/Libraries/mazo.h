@@ -22,6 +22,7 @@ void mezclarMazo(tMazo*p);
 void intercambiar(void*a,void*b,size_t tam);//esta función me parece que tiene que ir a para en utilidades.h
 int robarCarta(tMazo*p,void*dest,unsigned tam);
 int ponerEnMazo(tMazo*p,const void*dato,unsigned tam);
+int verTopeMazo(tMazo*p, void* dest, unsigned tam);
 
 //funciones para pruebas y verificaciones, bien feas
 typedef void(fMost)(const void*);

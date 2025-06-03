@@ -1,9 +1,5 @@
 #include"cola.h"
 
-/*--------------------------------------------------------
-*                       COLA DINÁMICA
-*---------------------------------------------------------*/
-
 void crearCola(tCola* cola){
     cola->pri = NULL;
 }
@@ -33,7 +29,7 @@ int ponerEnCola(tCola* cola, const void* dato, unsigned tamDato){
     }
 
     memcpy(nuevo->info,dato,tamDato);
-    nuevo->tam = tamDato;
+    nuevo->tamInfo = tamDato;
     nuevo->sig = NULL;
 
     if(cola->pri == NULL)
@@ -52,7 +48,7 @@ int sacarDeCola(tCola* cola, void* dato, unsigned tamDato){
     if(cola->pri == NULL)
         return COLA_VACIA;
 
-    memcpy(dato, cola->pri->info, MINIMO(tamDato,cola->pri->tam));
+    memcpy(dato, cola->pri->info, MINIMO(tamDato,cola->pri->tamInfo));
     cola->pri = cola->pri->sig;
     free(elim->info);
     free(elim);
@@ -63,7 +59,7 @@ int verPrimero(const tCola* cola, void* dato, unsigned tamDato){
 
     if(cola->pri == NULL)
         return COLA_VACIA;
-    memcpy(dato, cola->pri->info, MINIMO(tamDato,cola->pri->tam));
+    memcpy(dato, cola->pri->info, MINIMO(tamDato,cola->pri->tamInfo));
     return TODO_OK;
 }
 
