@@ -10,16 +10,19 @@
 #define CERCA_DE_GANAR 8
 
 typedef int(*algoritmo)(tJugador*,int*,int);
-typedef int(*condicion)(const tCarta*);
+typedef int(*condicion)(const tCarta*,const void*param);
 
 algoritmo elegirMaq(int);
 int jugarFacil(tJugador*,int*,int);
 int jugarMedio(tJugador*,int*,int);
-int buscarPor(tCarta*mano,condicion cond);
-int esMas(const tCarta*);
-int esMenos(const tCarta*);
-int esEspe(const tCarta*);
-int esRepTur(const tCarta*);
-int noEsEspe(const tCarta*);
+int jugarDificil(tJugador*,int*,int);
+int buscarPor(tCarta*mano,condicion cond,const void*);
+int esMas(const tCarta*,const void*);
+int esMenos(const tCarta*,const void*);
+int esEspe(const tCarta*,const void*);
+int esCartaBuena(const tCarta*,const void*);
+int esRepTur(const tCarta*,const void*);
+int noEsEspe(const tCarta*,const void*);
+int valMayorIgual(const tCarta*p,const void* param);
 
 #endif // MAQUINA_H_INCLUDED

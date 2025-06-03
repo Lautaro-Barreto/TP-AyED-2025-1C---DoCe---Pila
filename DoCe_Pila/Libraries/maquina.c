@@ -17,48 +17,61 @@ int jugarFacil(tJugador*maquina,int*p,int param)
 {
     return rand()%TAM_MANO;
 }
-int jugarMedio(tJugador*maquina,int*puntHum,int param)
+int jugarMedio(tJugador*maquina,int*puntHum,int ultCart)
 {
     int indMano;
 
-    if( maquina->puntaje>=CERCA_DE_GANAR && (indMano=buscarPor(maquina->mano,esMas))<TAM_MANO )
+    if( maquina->puntaje>=CERCA_DE_GANAR && (indMano=buscarPor(maquina->mano,esMas,NULL))<TAM_MANO )
+        return indMano;
+    if( *puntHum>0 && ( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO ||
+       ( ultCart<0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO ) ) )
+        return indMano;
+    if( (indMano=buscarPor(maquina->mano,esCartaBuena,NULL))<TAM_MANO )
         return indMano;
     else
-    {
-        if( *puntHum>0 && (indMano=buscarPor(maquina->mano,esMenos))<TAM_MANO )
-            return indMano;
-        if( (indMano=buscarPor(maquina->mano,noEsEspe))<TAM_MANO )
-            return indMano;
         return rand()%TAM_MANO;
-    }
 }
-int buscarPor(tCarta*mano,condicion cond)
+//int jugarDificil(tJugador*maquina,int*puntHum,int valUltCart)
+//{
+//    int indMano;
+//
+//    if( maquina->puntaje>=PUNTAJE_GANADOR &&  )
+//}
+int buscarPor(tCarta*mano,condicion cond,const void*param)
 {
     int i;
     for(i=0;i<TAM_MANO;i++)
     {
-        if( cond(mano+i) )
+        if( cond(mano+i,param) )
             return i;
     }
     return i;
 }
-int esMas(const tCarta*p)
+int esMas(const tCarta*p,const void*param)
 {
     return p->valor>0;
 }
-int esMenos(const tCarta*p)
+int esMenos(const tCarta*p,const void*param)
 {
     return p->valor<0;
 }
-int esEspe(const tCarta*p)
+int esEspe(const tCarta*p,const void*param)
 {
     return p->codigo==ESPEJO;
 }
-int esRepTur(const tCarta*p)
+int esRepTur(const tCarta*p,const void*param)
 {
     return p->codigo==REPETIR_TURNO;
 }
-int noEsEspe(const tCarta*p)
+int esCartaBuena(const tCarta*p,const void*param)
+{
+    return p->codigo==REPETIR_TURNO || p->valor>0;
+}
+int noEsEspe(const tCarta*p,const void*param)
 {
     return p->codigo!=ESPEJO;
+}
+int valMayorIgual(const tCarta*p,const void* param)
+{
+    return p->valor>=*(int*)param;
 }

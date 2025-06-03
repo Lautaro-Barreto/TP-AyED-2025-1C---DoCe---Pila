@@ -55,10 +55,10 @@ int ingresarDificultad ()
     {
         scanf("%d",&dificultad);
         while( getchar()!='\n' );
-        if(dificultad<1 || dificultad>3)
+        if(dificultad<FACIL || dificultad>CANT_DIFICULTADES)
             puts("Valor invalido, ingrese 1,2 o 3");
     }
-    while(dificultad<1 || dificultad>3);
+    while(dificultad<FACIL || dificultad>CANT_DIFICULTADES);
     return dificultad;
 }
 int elegirCarta ()
@@ -74,7 +74,7 @@ int elegirCarta ()
         if(opc<0 || opc>TAM_MANO-1)
             printf("Valor invalido, ingrese un valor entre 0-2\n");
     }
-    while(opc<0 || opc>2);
+    while(opc<0 || opc>TAM_MANO-1);
     return opc;
 }
 
