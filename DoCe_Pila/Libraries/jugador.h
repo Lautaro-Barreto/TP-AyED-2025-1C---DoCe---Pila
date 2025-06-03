@@ -16,6 +16,6 @@ typedef struct{
 typedef void(fMost)(const void*);
 
 void ingresarNombre (char*bufferNombre,unsigned tamBuffer);
-void mostrarJugador(const tJugador* jugador,fMost imprimirCarta);
+void mostrarMano(const tJugador* jugador,fMost imprimirCarta);
 
 #endif // JUGADOR_H_INCLUDED

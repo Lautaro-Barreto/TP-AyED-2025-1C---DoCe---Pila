@@ -18,15 +18,14 @@ void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
     }while(!strlen(bufferEntra));
 }
 
-void mostrarJugador(const tJugador* jugador,fMost imprimirCarta)
+void mostrarMano(const tJugador* jugador,fMost imprimirCarta)
 {
     unsigned i;
 
-    printf("Jugador: %s\nPuntaje:%d\nMano: \n\n", jugador->nombre,jugador->puntaje);
+    printf("\t-Turno de %s-\nTus cartas: \n\n", jugador->nombre);
     for(i = 0 ; i < TAM_MANO ; i++)
         {
             printf("%d-",i);
             imprimirCarta(&jugador->mano[i]);
-            printf("\n");
         }
 }

@@ -105,25 +105,25 @@ int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA)//avisa al 
 
     return entrada;
 }
-void aplicarEfecto(eEfecto carta,int valorCarta,int valorCartaRival,int*puntJug,int*puntRival,unsigned*turnoDe)
+void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,unsigned*turnoDe)
 {
-    switch(carta)
+    switch(elegida->codigo)
     {
     case MAS_DOS:
     case MAS_UNO:
-        *puntJug+=valorCarta;
+        *puntJug+=elegida->valor;
         break;
     case MENOS_UNO:
     case MENOS_DOS:
-        if( *puntRival+valorCarta >= 0 )
-            *puntRival+=valorCarta;
+            if( (*puntRival+=elegida->valor)<0 )
+                *puntRival=0;
         break;
     case ESPEJO:
-        if( valorCartaRival<0 )
+        if( valorUltCar<0 )
         {
-            *puntJug-=valorCartaRival;
-            if( *puntRival+valorCartaRival >= 0 )
-                *puntRival-=valorCartaRival;
+            *puntJug-=valorUltCar;
+            if( (*puntRival+=valorUltCar) < 0 )
+                *puntRival=0;
         }
         break;
     case REPETIR_TURNO:
@@ -149,7 +149,7 @@ void partida(unsigned turnoDe,tJugador*humano,
             rival=maquina;
             do
             {
-                mostrarJugador(humano,mostrarCarta);
+                mostrarMano(humano,mostrarCarta);
                 indice=elegirCarta();
                 verificar=evaluarEleccion(&humano->mano[indice], maquina->puntaje,
                                 ultDescar);
@@ -160,10 +160,10 @@ void partida(unsigned turnoDe,tJugador*humano,
             jugadorAct=maquina;
             rival=humano;
             indice=selecCarta(maquina,&humano->puntaje,ultValDesc);
-            printf("\nLa Maquina juega un: %s\n",maquina->mano[indice].descrip);
+            printf("\n\t-Turno de la Maquina-\n\nLa Maquina juega un: %s\n\n",maquina->mano[indice].descrip);
         }
-        aplicarEfecto(jugadorAct->mano[indice].codigo,jugadorAct->mano[indice].valor,
-                      ultValDesc,&jugadorAct->puntaje,&rival->puntaje,&turnoDe);
+        aplicarEfecto(&jugadorAct->mano[indice],&jugadorAct->puntaje,ultValDesc,&rival->puntaje,&turnoDe);
+        mostrarEstPart(humano,maquina);
         ponerEnMazo(descarte, &jugadorAct->mano[indice], tamCart);
         ultDescar=jugadorAct->mano[indice].codigo;
         ultValDesc=jugadorAct->mano[indice].valor;
@@ -195,7 +195,8 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
     }
 }
 
-///Completar
-//int turnoIa(tIA* ia, tPilaEstatica* mazo, tPilaEstatica* descarte){
-//}
-//
+void mostrarEstPart(tJugador*hum,tJugador*maq)
+{
+    printf("\nJugador: %s\tPuntaje:%d\nJugador: %s\tPuntaje:%d\n\n"
+           ,hum->nombre,hum->puntaje,maq->nombre,maq->puntaje);
+}
