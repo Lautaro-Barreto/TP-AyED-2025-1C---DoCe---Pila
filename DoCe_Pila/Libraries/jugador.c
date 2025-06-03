@@ -8,7 +8,7 @@ void ingresarNombre (char*bufferEntra,unsigned tamEntrada)
     {
         if(pasada)
             printf("\nEl nombre ingresado no es valido");
-        pasada=printf("\nIngrese el nombre del jugador (Maximo %d caracteres): ",tamEntrada); //el valor de pasada dejara de ser cero y sabre que entro por lo menos una vez
+        pasada=printf("\nIngrese el nombre del jugador (Maximo %d caracteres): ",tamEntrada-1); //el valor de pasada dejara de ser cero y sabre que entro por lo menos una vez
         fgets(bufferEntra,tamEntrada,stdin);
         entrada=strchr(bufferEntra,'\n');
         if(entrada)

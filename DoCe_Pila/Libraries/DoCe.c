@@ -63,12 +63,13 @@ int ingresarDificultad ()
 }
 int elegirCarta ()
 {
-    int opc=0;
+    int opc=-1;
 
-    printf("\nElija una carta: ");
+    printf("\nElija una carta (0-2)\n");
     do
     {
         fflush(stdin);
+        printf("Eleccion:");
         scanf("%d",&opc);
         while( getchar()!='\n' );
         if(opc<0 || opc>TAM_MANO-1)
