@@ -1,0 +1,548 @@
+Turno 1:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 2:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 3:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 4:
+Claure jugó "Espejo" y acumuló 0 puntos
+
+Turno 5:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 6:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 7:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 8:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 9:
+Claure jugó "Espejo" y acumuló 2 puntos
+
+Turno 10:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 11:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 12:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 13:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 14:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 15:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 16:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 17:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 18:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 19:
+IA jugó "Espejo" y acumuló 2 puntos
+
+Turno 20:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 21:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 22:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 23:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 24:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 25:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 26:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 27:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 28:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 29:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 30:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 31:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 32:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 33:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 34:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 35:
+IA jugó "Menos uno" y acumuló 1 puntos
+
+Turno 36:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 37:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 38:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 39:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 40:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 41:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 42:
+Claure jugó "Espejo" y acumuló 0 puntos
+
+Turno 43:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 44:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 45:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 46:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 47:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 48:
+Claure jugó "Espejo" y acumuló 2 puntos
+
+Turno 49:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 50:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 51:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 52:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 53:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 54:
+IA jugó "Espejo" y acumuló 2 puntos
+
+Turno 55:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 56:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 57:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 58:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 59:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 60:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 61:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 62:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 63:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 64:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 65:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 66:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 67:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 68:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 69:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 70:
+Claure jugó "Mas dos" y acumuló 1 puntos
+
+Turno 71:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 72:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 73:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 74:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 75:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 76:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 77:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 78:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 79:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 80:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 81:
+Claure jugó "Espejo" y acumuló 1 puntos
+
+Turno 82:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 83:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 84:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 85:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 86:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 87:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 88:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 89:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 90:
+IA jugó "Espejo" y acumuló 2 puntos
+
+Turno 91:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 92:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 93:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 94:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 95:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 96:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 97:
+IA jugó "Espejo" y acumuló 2 puntos
+
+Turno 98:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 99:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 100:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 101:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 102:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 103:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 104:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 105:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 106:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 107:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 108:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 109:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 110:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 111:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 112:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 113:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 114:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 115:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 116:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 117:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 118:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 119:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 120:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 121:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 122:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 123:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 124:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 125:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 126:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 127:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 128:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 129:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 130:
+Claure jugó "Espejo" y acumuló 0 puntos
+
+Turno 131:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 132:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 133:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 134:
+Claure jugó "Espejo" y acumuló 2 puntos
+
+Turno 135:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 136:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 137:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 138:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 139:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 140:
+IA jugó "Menos uno" y acumuló 1 puntos
+
+Turno 141:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 142:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 143:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 144:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 145:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 146:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 147:
+Claure jugó "Espejo" y acumuló 0 puntos
+
+Turno 148:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 149:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 150:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 151:
+Claure jugó "Espejo" y acumuló 2 puntos
+
+Turno 152:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 153:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 154:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 155:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 156:
+IA jugó "Espejo" y acumuló 2 puntos
+
+Turno 157:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 158:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 159:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 160:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 161:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 162:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 163:
+Claure jugó "Menos dos" y acumuló 0 puntos
+
+Turno 164:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 165:
+Claure jugó "Menos uno" y acumuló 0 puntos
+
+Turno 166:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 167:
+Claure jugó "Mas dos" y acumuló 2 puntos
+
+Turno 168:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 169:
+Claure jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 170:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 171:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 172:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 173:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 174:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 175:
+IA jugó "Mas uno" y acumuló 0 puntos
+
+Turno 176:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 177:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 178:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 179:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 180:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 181:
+Claure jugó "Mas uno" y acumuló 1 puntos
+
+Turno 182:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+
+GANADOR: IA

@@ -1,0 +1,251 @@
+Turno 1:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 2:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 3:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 4:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 5:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 6:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 7:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 8:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 9:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 10:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 11:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 12:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 13:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 14:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 15:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 16:
+Juan jugó "Menos dos" y acumuló 0 puntos
+
+Turno 17:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 18:
+Juan jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 19:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 20:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 21:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 22:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 23:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 24:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 25:
+Juan jugó "Espejo" y acumuló 2 puntos
+
+Turno 26:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 27:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 28:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 29:
+Juan jugó "Espejo" y acumuló 2 puntos
+
+Turno 30:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 31:
+Juan jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 32:
+Juan jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 33:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 34:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 35:
+Juan jugó "Menos uno" y acumuló 2 puntos
+
+Turno 36:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 37:
+Juan jugó "Espejo" y acumuló 2 puntos
+
+Turno 38:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 39:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 40:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 41:
+Juan jugó "Menos dos" y acumuló 0 puntos
+
+Turno 42:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 43:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 44:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 45:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 46:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 47:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 48:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 49:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 50:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 51:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 52:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 53:
+Juan jugó "Menos dos" y acumuló 0 puntos
+
+Turno 54:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 55:
+Juan jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 56:
+Juan jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 57:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 58:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 59:
+Juan jugó "Espejo" y acumuló 1 puntos
+
+Turno 60:
+IA jugó "Menos dos" y acumuló 0 puntos
+
+Turno 61:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 62:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 63:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 64:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 65:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 66:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 67:
+IA jugó "Menos uno" y acumuló 0 puntos
+
+Turno 68:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 69:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 70:
+IA jugó "Repetir turno" y acumuló 1 puntos
+
+Turno 71:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+Turno 72:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 73:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 74:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 75:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 76:
+IA jugó "Mas dos" y acumuló 2 puntos
+
+Turno 77:
+Juan jugó "Menos uno" y acumuló 0 puntos
+
+Turno 78:
+IA jugó "Espejo" y acumuló 1 puntos
+
+Turno 79:
+Juan jugó "Mas dos" y acumuló 2 puntos
+
+Turno 80:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 81:
+IA jugó "Repetir turno" y acumuló 0 puntos
+
+Turno 82:
+IA jugó "Mas uno" y acumuló 1 puntos
+
+Turno 83:
+Juan jugó "Mas uno" y acumuló 1 puntos
+
+
+GANADOR: Juan
