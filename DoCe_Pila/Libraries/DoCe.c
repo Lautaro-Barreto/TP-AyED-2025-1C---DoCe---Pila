@@ -170,6 +170,7 @@ void partida(unsigned turnoDe,tJugador*humano,
             do
             {
                 mostrarMano(humano,mostrarCarta);
+//                printf("\nPuntosPerdidosHum=%d\n",humano->puntPerdidos);
                 indice=elegirCarta();
                 verificar=evaluarEleccion(&humano->mano[indice], humano->puntPerdidos, maquina->puntaje);
             }while( verificar!=CONFIRMAR );
@@ -179,7 +180,8 @@ void partida(unsigned turnoDe,tJugador*humano,
             jugadorAct=maquina;
             rival=humano;
             indice=selecCarta(maquina,humano->puntaje);
-            printf("\n\t-Turno de la Maquina-\n\nLa Maquina juega un: %s\n\n",maquina->mano[indice].descrip);
+            printf("\n\t-Turno de la Maquina, %s juega un: %s\n\n",
+                   maquina->nombre,maquina->mano[indice].descrip);
         }
         puntosAntes = jugadorAct->puntaje;
         aplicarEfecto(jugadorAct,indice,rival,&turnoDe);
@@ -229,8 +231,11 @@ void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia)
 
 void mostrarEstPart(tJugador*hum,tJugador*maq)
 {
-    printf("\nJugador: %s\tPuntaje:%d\nJugador: %s\tPuntaje:%d\n\n"
-           ,hum->nombre,hum->puntaje,maq->nombre,maq->puntaje);
+    int largo=MINIMO(strlen(hum->nombre),strlen(maq->nombre));
+
+    printf("\nPuntaje de %*s:%02d\tPuntos perdidos:%d\nPuntaje de %*s:%02d\tPuntos perdidos:%d\n\n",
+           largo,hum->nombre,hum->puntaje,hum->puntPerdidos,
+           largo,maq->nombre,maq->puntaje,maq->puntPerdidos);
 }
 
 int generarInforme(tCola* historial){
