@@ -60,7 +60,7 @@
 | --- | --- | --- |
 | Se quiere probar qué es lo que ocurre con el informe al finalizar la partida | Se espera que se genere un archivo de texto con la fecha y hora actual, quién jugó cuál carta en cada turno y cuál fue el ganador de la partida | Se obtuvo un archivo de texto con el formato de nombre informe-juego_YYYY-MM-DD-HH-mm.txt |
 
-![PruebaInforme](/img/ejinformesuccesfullycreated.png)
+![PruebaInforme](/imgs/ejinformesuccesfullycreated.png)
 ![Contenido](/imgs/contenidoinforme.png)
 
 ## Pruebas respecto al Ranking 
