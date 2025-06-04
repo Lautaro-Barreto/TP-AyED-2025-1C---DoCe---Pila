@@ -8,7 +8,12 @@
   -   Cartas Mas Uno/Dos: suman puntos al jugador que las utiliza.
   -   Cartas Menos Uno/Dos: restan puntos al rival, pero solo hasta que el puntaje del rival llegue a cero.
   -   Cartas Repetir turno: permite al jugador que la utiliza robar una carta y repetir su turno.
-  -   Cartas Espejo: si se juegan tras recibir un carta Menos, se suman al puntaje del lanzador la cantidad de puntos de la carta Menos y también se restan al puntaje del rival.
+  -   Cartas Espejo: te permite anular y devolver el último efecto recibído.
+- Puntos Perdidos: indica los puntos que te han sido arrebatados por la ultima carta negativa de tu rival (Menos Uno, Menos Dos o espejo).
+  - Si el jugador tiene 0 puntos perdidos, las cartas espejo solo se descartaran.
+  - Si tienes 1 o más puntos perdidos, al utilizar una carta espejo se te devolveran dichos puntos y se restaran al rival.
+  - Los puntos perdidos de un jugador se reinician a 0 al recuperarlos con una carta espejo.
+  - Puedes ver los puntos perdidos de tu oponente, así que piensa cuando jugar -1/-2.
 
 ## Cómo jugar
 1. Seleccionar la opción "Jugar" (tecla 'A')
