@@ -14,38 +14,40 @@ algoritmo elegirMaq(int dificultad)
         return jugarFacil;
     }
 }
-int jugarFacil(tJugador*maquina,int*p,int param)
+int jugarFacil(tJugador*maquina,int param)
 {
     return rand()%TAM_MANO;
 }
-int jugarMedio(tJugador*maquina,int*puntHum,int ultCart)
+int jugarMedio(tJugador*maquina,int puntHum)
 {
     int indMano;
 
     if( maquina->puntaje>=CERCA_DE_GANAR && (indMano=buscarPor(maquina->mano,esMas,NULL))<TAM_MANO )
         return indMano;
-    if( *puntHum>0 && ( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO ||
-       ( ultCart<0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO ) ) )
+
+    if( puntHum>0 && ((indMano=buscarPor(maquina->mano,esMenos,NULL)) < TAM_MANO ||
+       ( maquina->puntPerdidos>0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO ) ))
         return indMano;
+
     if( (indMano=buscarPor(maquina->mano,esCartaBuena,NULL))<TAM_MANO )
         return indMano;
     else
         return rand()%TAM_MANO;
 }
-int jugarDificil(tJugador*maquina,int*puntHum,int ultCart)
+int jugarDificil(tJugador*maquina,int puntHum)
 {
     int indMano,cartBuenas;
 
-    if( ultCart<0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO )
+    if( maquina->puntPerdidos>0 && (indMano=buscarPor(maquina->mano,esEspe,NULL))<TAM_MANO )
         return indMano;
 
-    if( *puntHum>=CERCA_DE_GANAR && ( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO ||
+    if( puntHum>=CERCA_DE_GANAR && ( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO ||
        (indMano=buscarPor(maquina->mano,esRepTur,NULL))<TAM_MANO ) )
         return indMano;
 
     if( ((cartBuenas=contar(maquina->mano,esCartaBuena))>1 &&
        (indMano=buscarPor(maquina->mano,esRepTur,NULL))<TAM_MANO) ||
-       (indMano=buscarPor(maquina->mano,esMas,NULL))<TAM_MANO )
+       (indMano=buscarPor(maquina->mano,esCartaBuena,NULL))<TAM_MANO )
        return indMano;
 
     if( (indMano=buscarPor(maquina->mano,esMenos,NULL))<TAM_MANO )

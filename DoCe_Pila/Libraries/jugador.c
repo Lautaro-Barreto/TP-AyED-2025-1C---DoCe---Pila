@@ -29,3 +29,7 @@ void mostrarMano(const tJugador* jugador,fMost imprimirCarta)
             imprimirCarta(&jugador->mano[i]);
         }
 }
+void crearJugador(tJugador*j)
+{
+    j->puntaje=j->puntPerdidos=0;
+}

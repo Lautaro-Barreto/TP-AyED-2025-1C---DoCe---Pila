@@ -51,10 +51,10 @@
 
 1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\utilidades.h
 
-1748982259 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
+1749000924 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.c
 	"DoCe.h"
 
-1748971421 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
+1748991071 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\doce.h
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
@@ -103,11 +103,11 @@
 1748971421 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\mazo.c
 	"mazo.h"
 
-1748920579 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h
+1748983519 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.h
 	"carta.h"
 	"string.h"
 
-1748978499 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
+1748983519 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\jugador.c
 	"jugador.h"
 
 1748959469 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\carta.c
@@ -300,10 +300,10 @@
 
 1748887529 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\curl\include\curl\typecheck-gcc.h
 
-1748974570 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.c
+1748992365 source:c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.c
 	"maquina.h"
 
-1748973387 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
+1748992149 c:\users\administrador\documents\github\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\maquina.h
 	"jugador.h"
 
 1748962482 source:c:\users\usuario\desktop\tp-ayed-2025-1c---doce---pila\doce_pila\libraries\cola.c

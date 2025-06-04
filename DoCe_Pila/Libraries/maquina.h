@@ -9,13 +9,13 @@
 #define CANT_DIFICULTADES 3
 #define CERCA_DE_GANAR 8
 
-typedef int(*algoritmo)(tJugador*,int*,int);
+typedef int(*algoritmo)(tJugador*,int);
 typedef int(*condicion)(const tCarta*,const void*param);
 
 algoritmo elegirMaq(int);
-int jugarFacil(tJugador*,int*,int);
-int jugarMedio(tJugador*,int*,int);
-int jugarDificil(tJugador*,int*,int);
+int jugarFacil(tJugador*,int);
+int jugarMedio(tJugador*,int);
+int jugarDificil(tJugador*,int);
 int buscarPor(tCarta*mano,condicion cond,const void*);
 int esMas(const tCarta*,const void*);
 int esMenos(const tCarta*,const void*);

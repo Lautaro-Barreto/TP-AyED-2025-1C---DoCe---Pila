@@ -38,8 +38,8 @@ void partida(unsigned turnoDe, tJugador*jugador,
              tJugador*maquina, tMazo*principal, tMazo*descar,algoritmo jugar);
 void repartirCartas(tMazo* mazo, tJugador* jugador, tJugador* ia);
 int elegirCarta ();
-int evaluarEleccion(tCarta* elegida,int puntajeIA, eEfecto ultCartIA);
-void aplicarEfecto(tCarta* elegida,int*puntJug,int valorUltCar,int*puntRival,unsigned*turnoDe);
+int evaluarEleccion(tCarta* elegida,int puntPerd,int puntajeIA);
+void aplicarEfecto(tJugador* act,int indice,tJugador*rival,unsigned*turnoDe);
 void mostrarEstPart(tJugador*,tJugador*);
 int generarInforme(tCola* historial);
 
