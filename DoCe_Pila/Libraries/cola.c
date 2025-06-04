@@ -9,11 +9,7 @@ int colaVacia(const tCola* cola){
 }
 
 int colaLlena(const tCola* cola, unsigned tamDato){
-    tNodo* aux = (tNodo*)malloc(sizeof(tNodo));
-    aux->info = malloc(tamDato);
-    free(aux->info);
-    free(aux);
-    return aux == NULL || aux->info == NULL;
+    return 0;
 }
 
 int ponerEnCola(tCola* cola, const void* dato, unsigned tamDato){

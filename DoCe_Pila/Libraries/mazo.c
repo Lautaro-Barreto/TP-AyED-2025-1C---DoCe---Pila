@@ -22,7 +22,7 @@ int llenarMazo(tMazo*p)
         {
             carta.codigo=(config+indConf)->codigo;
             carta.valor=(config+indConf)->valor;
-            strncpy(carta.descrip,(config+indConf)->descrip,TAM_DESCRIP);
+            strcpy(carta.descrip,(config+indConf)->descrip);
             ponerEnMazo( p, &carta, sizeof(tCarta));
         }
     }

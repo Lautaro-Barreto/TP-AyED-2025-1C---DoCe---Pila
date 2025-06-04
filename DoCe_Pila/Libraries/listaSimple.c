@@ -131,23 +131,6 @@ void vaciarLista(tLista* pl){
     *pl = NULL;
 }
 
-void ordenarLista(tLista* pl, comparar cmp){
-
-    tNodo** pMenor;
-    tNodo* menor;
-
-    while(*pl){
-        pMenor = buscarMenor(pl, cmp);
-        if(menor != *pl){
-            menor = *pMenor;
-            *pMenor = menor->sig;
-            menor->sig = *pl;
-            *pl = menor;
-        }
-        pl = &(*pl)->sig;
-    }
-}
-
 tNodo** buscarMenor(tLista*pl, comparar cmp){
 
     tNodo** menor = pl;
