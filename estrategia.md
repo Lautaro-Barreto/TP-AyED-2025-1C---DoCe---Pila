@@ -8,7 +8,8 @@ La función *mezclarMazo* hace uso del Algoritmo de Fisher-Yates, en el cual se 
 
 ## Ranking de jugadores
 
-La funcionalidad **"Ver Ranking"** consulta un endpoint que devuelve, en un array, cuántas partidas ganó cada jugador que se enfrentó a la computadora. Al parsear cada dato presente en la respuesta de la API a una estructura, se los inserta de manera ordenada en una **Lista Simplemente Enlazada**, de manera tal que los jugadores queden ordenados de mayor a menor en función del número de partidas ganadas. Una vez finalizada la lectura de los datos, se mapea la lista (ya ordenada) para mostrar el ranking completo. 
+La funcionalidad **"Ver Ranking"** consulta un endpoint que devuelve, en un array de objetos JSON, cuántas partidas ganó cada jugador que se enfrentó a la computadora. Al parsear cada dato presente en la respuesta de la API a una estructura, se los inserta de manera ordenada en una **Lista Simplemente Enlazada**, de manera tal que los jugadores queden ordenados de mayor a menor en función del número de partidas ganadas. Una vez finalizada la lectura de los datos, se mapea la lista (ya ordenada) para mostrar el ranking completo. 
+El concepto de lista se cierne apropiadamente a la definición de ranking, y sus primitivas *insertarOrdenado()* *map()* facilitan la operación de traspaso de la información a un estado de orden y el hecho de mostrarla.
 
 ## Historial de turnos
 
@@ -17,7 +18,7 @@ De esta manera, al finalizar la partida, los datos quedan ordenados del primero 
 
 # Estrategias de desarrollo del proyecto
 
-El proyecto fue modularizado lo más que se pudo, llegándose a dividir cada parte importante del sistema en su propio archivo por separado, cada uno con sus definiciones de funciones y macro reemplazos pertinentes.  Aquellas definiciones que resultaron comunes para varios archivos fueron agrupadas bajo el nombre de *"utilidades.h"*
+El proyecto fue modularizado lo más posible, llegándose a dividir cada parte importante del sistema en su propio archivo por separado, cada uno con sus definiciones de funciones y macro reemplazos pertinentes.  Aquellas definiciones que resultaron comunes para varios archivos fueron agrupadas bajo el nombre de *"utilidades.h"*
 
 Cada parte  del juego fue desarrollada bajo el nombre que la representa, séase, cartas, mazo, API, jugador, o IA. También, se dispone de bibliotecas útiles desarrolladas por nosotros (listaSimple, cola) y por terceros (libcurl).
 
@@ -46,23 +47,33 @@ Una vez que se llegó al final del juego, los resultados se guardan en el archiv
 
 ### El Jugador
 
-*acá explico algo sobre cómo está compuesta la estructura tJugador*
+Dentro de la estructura **tJugador** contamos con un vector de tres cartas, el nombre del jugador y su puntaje. Adicionalmente, se lleva registro de cuántos puntos perdió en el turno anterior, información que le sirve a la función aplicarEfecto() para calcular cuántos puntos restará al rival en caso de darse una situación donde se ambos juegan *espejo*; 
 
 ### La IA y sus niveles de dificultad
 
-Nuestro oponente, la máquina, es al igual que el jugador humano una estructura de tipo tJugador. No obstante, su comportamiento se encuentra definido por una de las tres opciones de dificultad seleccionadas antes de iniciar la partida. Al seleccionarla, estamos asignándole a la función que evalúa qué carta jugará una función específica de comportamiento. 
+Nuestro oponente, la máquina, es, al igual que el jugador humano, una estructura de tipo tJugador. No obstante, su comportamiento se encuentra definido por una de las tres opciones de dificultad seleccionadas antes de iniciar la partida. Al tomar esta decisión, estamos asignándole un algoritmo específico de comportamiento a la función que evalúa qué carta jugará,. 
 
-- En el más básico de todos, *fácil*, el índice de la carta a jugar por la máquina es un número aleatorio entre 0 y 3.
-- explicar medio 
-- explicar dificil
+- En el modo más básico de todos, *fácil*, el índice de la carta a jugar por la máquina es un número aleatorio entre 0 y 3.
 
-## La API
+- En la dificultad *media*, la máquina revisa, antes de devolver un índice, si su puntaje es mayor o igual a 8 (está cerca de ganar). Si lo es, busca dentro de su mano alguna carta que sea de tipo *sumar* y la juega. De no ser así, tiene tres caminos posibles.
+  - Primero, se fija si el puntaje del rival es mayor a cero para buscar en su mano una carta de tipo *restar*.
+  - Si lo anterior no se cumple, pregunta si la última carta jugada es de tipo *restar* para buscar una de tipo espejo.
+  - Si ninguna de las anteriores se cumple, elije una carta al azar.
 
-El programa se comunica con distintos endpoints de una misma API subida a la plataforma Microsoft Azure. Mediante esta, se gestionan los rankings de jugadores. La configuración de la misma se levanta desde un archivo de texto que, en caso de no ser encontrado por el programa, será generado nuevamente para su posterior lectura.
+- El último nivel, *difícil*, expande las cuestiones planteadas en la dificultad media, agregando algunas condiciones extra.
+  - Lo primero que hace es revisar si la última carta jugada es de tipo *restar* para así contraatacar con un espejo.
+  - Si no lo es,  consulta si su rival está por ganar para así buscar o una carta de *restar* o un *repetir turno* para tener más oportunidades.
+  - Si lo anterior es falso, cuenta cuántas cartas "buenas" (*sumar*) para acompañar una carta *repetir turno* con la que cuenta. Si no se cumple, busca al menos jugar una carta de tipo *sumar*.
+  - Como último recurso, busca una carta de tipo *restar*.
+  - Si no se cumple ninguna condición favorable, juega alguna carta al azar de entre las tres disponibles en su mano. 
+
+## La conexión con la API
+
+El programa se comunica con distintos endpoints de una misma API de la plataforma Microsoft Azure. Mediante esta, se gestionan los rankings de jugadores. La configuración de la misma se levanta desde un archivo de texto que, en caso de no ser encontrado por el programa, será generado nuevamente para su posterior lectura.
 Al ser el cuerpo de la solicitud conocido, se optó por desglosar los datos obtenidos en las request de manera manual dentro del código.
 
 En instancias preliminares, se utilizó la herramienta Postman para probar el funcionamiento y las respuestas de la API, mediante solicitudes de tipo GET, POST y DELETE.
 
 Dentro del código:
-- GET -> Se envía la request mediante las funciones de la biblioteca libcurl y los datos recibidos en forma de array de objetos de formato JSON son parseados manualmente objeto a objeto hacia una estructura e insertados en orden en una lista.
-- POST -> Utilizando un string, se le da el formato de JSON de forma manual, guardando el nombre del jugador y un número que corresponde a si fue o no el ganador.
+- GET -> Se envía la request mediante las funciones de la biblioteca libcurl y los datos recibidos en forma de array de objetos de formato JSON son parseados manualmente objeto a objeto hacia una estructura e insertados en orden en una lista simplemente enlazada.
+- POST -> Utilizando un string, se le da el formato JSON de forma manual, guardando el nombre del jugador y un número que corresponde a si fue o no el ganador (1 o 0, respectivamente).
