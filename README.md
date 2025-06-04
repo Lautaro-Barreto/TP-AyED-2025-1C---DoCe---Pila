@@ -12,11 +12,11 @@
 
 ## Cómo jugar
 1. Seleccionar la opción "Jugar" (tecla 'A')
-2. Ingrese su nombre, puede utilizar caracteres especiales y el máximo es de 25 caracteres).
+2. Ingrese su nombre, puede utilizar caracteres especiales y el máximo es de 25 caracteres.
 3. Ingrese la dificultad de la IA (Fácil, medio o difícil).
 4. El primero turno se determina de manera aleatoria, se muestran los puntajes junto con los nombre de los respectivos jugadores.
-5. Durante el turno del jugador, se mostrar las cartas que tiene en mano y se pedira seleccionar una carta.
-7. Durante el turno de la IA se mostrara la carta jugada por esta.
+5. Durante el turno del jugador, se mostrarán las cartas que tiene en mano y se pedirá seleccionar una carta.
+7. Durante el turno de la IA se mostrará la carta jugada por esta.
 
 ## Dificultades
 - Fácil: La maquina juega de manera aleatoria
@@ -29,7 +29,7 @@
   - Prefiere repetir turno solo si tiene más de una carta buena en mano (las cartas de sumar puntos o repetir turno son consideradas "cartas buenas").
 
 ## Requisitos
-Este proyecto funciona con curl, si no lo tiene, seguir estas instrucciones, en caso de ejecutarlo utilizando el IDE Codeblocks:
+Este proyecto funciona con la biblioteca Curl. Si no cuenta con ella en su computadora, siga estas instrucciones, en caso de ejecutarlo utilizando el IDE Codeblocks:
 
 1. Descargar curl desde: https://curl.se/windows (En caso de no usar Windows, https://curl.se/download.html).
 2. Descomprimir el zip y pasar esa carpeta a una ubicación segura.
@@ -37,3 +37,5 @@ Este proyecto funciona con curl, si no lo tiene, seguir estas instrucciones, en 
 4. En Codeblocks: Settings > Compiler > Linker Settings: agregar ubicación a “lib\libcurl.dll.a”.
 5. En Codeblocks: Settings > Compiler > Search directories > Compiler y Resource compiler: agregar ubicación a “include”.
 6. En Codeblocks: Settings > Compiler > Search directories > Linker: agregar ubicación a “lib”.
+
+Alternativamente, y a fines de simplificar la ejecución del juego, el proyecto cuenta con los archivos de la biblioteca ya incorporados dentro de la carpeta *Libraries*. Abriendo el archivo *DoCe_Pila.cbp* con el IDE CodeBlocks, es posible obtener y correr los ejecutables del juego haciendo click sobre la pestaña *build and run*.

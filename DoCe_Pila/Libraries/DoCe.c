@@ -190,6 +190,7 @@ void partida(unsigned turnoDe,tJugador*humano,
 
         if( robarCarta(principal, &jugadorAct->mano[indice], tamCart)!= TODO_OK )
         {
+            printf("\nSe vacio el mazo principal. Mezclando mazo de descarte...\n\n");
             mezclarMazo(descarte);
             temporal=principal;
             principal=descarte;
