@@ -31,6 +31,13 @@
 ![repetirturno](/imgs/ejrepetirturno1.jpg)
 ![repetirturno2](/imgs/ejrepetirturno2.jpg)
 
+| Descripción | Salida esperada | Salida obtenida
+| --- | --- | --- |
+| Se quiere probar bajo cómo responde la IA a una carta *espejo* teniendo también una carta *espejo* a mano | Se espera que la IA juegue una carta de *espejo* en respuesta a una carta *espejo* usada para repeler un ataque anterior | La IA juega una carta de *espejo* y devuelve nuevamente un efecto negativo que le había sido "espejado" |
+
+![dobleespejowoosh](/imgs/espejodoble.jpg)
+
+
 # Pruebas de los efectos de las cartas
 
 | Descripción | Salida esperada | Salida obtenida
